@@ -73,8 +73,20 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 0 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 1 localization keys.
     struct localizable {
+      /// en translation: Une erreur est survenue
+      /// 
+      /// Locales: en
+      static let internal_error_no_code = Rswift.StringResource(key: "internal_error_no_code", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      
+      /// en translation: Une erreur est survenue
+      /// 
+      /// Locales: en
+      static func internal_error_no_code(_: Void = ()) -> String {
+        return NSLocalizedString("internal_error_no_code", bundle: R.hostingBundle, comment: "")
+      }
+      
       fileprivate init() {}
     }
     
