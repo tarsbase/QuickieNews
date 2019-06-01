@@ -7,4 +7,9 @@
 */
 
 // MARK: ServerError
-"internal_error_no_code" = "Une erreur est survenue";
+"internal_error_no_code" = "An error occurs";
+
+// MARK: TabBarController
+"tabbar_home" = "Home";
+"tabbar_categories" = "My interests";
+"tabbar_articles" = "My articles";
