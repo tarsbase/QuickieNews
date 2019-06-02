@@ -40,5 +40,7 @@ class TabBarController: UITabBarController {
                                                                selectedImage: R.image.tabbar_articles_inactive())
         
         viewControllers = [categoriesViewController, homeNavigationController, articlesNavigationController]
+        
+        selectedIndex = 1
     }
 }

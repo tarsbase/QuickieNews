@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		42E8C27F94A34F9B77FCDD43 /* Pods_QuickieNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A828E91A4CC623D5ABD9A3 /* Pods_QuickieNews.framework */; };
 		BB1B825A22A2B31F00DC5F2E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B825922A2B31F00DC5F2E /* UIColor.swift */; };
+		BB7757AC22A3DAEF006421DA /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AB22A3DAEF006421DA /* ActionButton.swift */; };
+		BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AD22A3DFCD006421DA /* UIView.swift */; };
+		BB7757B622A3E0FD006421DA /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757B522A3E0FC006421DA /* UIFont.swift */; };
+		BB7757B722A3E130006421DA /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B222A3E0A9006421DA /* Montserrat-Bold.otf */; };
+		BB7757B822A3E132006421DA /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B022A3E0A9006421DA /* Montserrat-ExtraLight.otf */; };
+		BB7757B922A3E141006421DA /* Montserrat-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B322A3E0A9006421DA /* Montserrat-ExtraLightItalic.otf */; };
+		BB7757BA22A3E143006421DA /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B122A3E0A9006421DA /* Montserrat-Medium.otf */; };
+		BB7757BB22A3E145006421DA /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B422A3E0A9006421DA /* Montserrat-Regular.otf */; };
+		BB7757BD22A3E82B006421DA /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757BC22A3E82B006421DA /* ArticleCardView.swift */; };
+		BB7757BF22A3E854006421DA /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757BE22A3E854006421DA /* NibView.swift */; };
+		BB7757C122A3EA28006421DA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C022A3EA28006421DA /* Date.swift */; };
+		BB7757C322A3EAF3006421DA /* ArticleCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7757C222A3EAF3006421DA /* ArticleCardView.xib */; };
+		BB7757C522A3ECF4006421DA /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */; };
+		BB7757C722A3EDE2006421DA /* CategoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C622A3EDE2006421DA /* CategoriesManager.swift */; };
+		BB7757C922A416CD006421DA /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C822A416CD006421DA /* CGPoint.swift */; };
 		BB7800D422A1766E0091BF55 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7800D322A1766D0091BF55 /* R.generated.swift */; };
 		BB7800DA22A177FE0091BF55 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB7800DC22A177FE0091BF55 /* Localizable.strings */; };
 		BB7800DE22A17A200091BF55 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7800DD22A17A200091BF55 /* APIService.swift */; };
@@ -37,6 +52,21 @@
 		15B094A94056EBF5CAA095ED /* Pods-QuickieNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickieNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickieNews/Pods-QuickieNews.debug.xcconfig"; sourceTree = "<group>"; };
 		35A828E91A4CC623D5ABD9A3 /* Pods_QuickieNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickieNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B825922A2B31F00DC5F2E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BB7757AB22A3DAEF006421DA /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		BB7757AD22A3DFCD006421DA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BB7757B022A3E0A9006421DA /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
+		BB7757B122A3E0A9006421DA /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		BB7757B222A3E0A9006421DA /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		BB7757B322A3E0A9006421DA /* Montserrat-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		BB7757B422A3E0A9006421DA /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		BB7757B522A3E0FC006421DA /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		BB7757BC22A3E82B006421DA /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
+		BB7757BE22A3E854006421DA /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		BB7757C022A3EA28006421DA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		BB7757C222A3EAF3006421DA /* ArticleCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCardView.xib; sourceTree = "<group>"; };
+		BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		BB7757C622A3EDE2006421DA /* CategoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesManager.swift; sourceTree = "<group>"; };
+		BB7757C822A416CD006421DA /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		BB7800D322A1766D0091BF55 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BB7800DB22A177FE0091BF55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB7800DD22A17A200091BF55 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -93,9 +123,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB1B825B22A3D99900DC5F2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB7757A922A3DABB006421DA /* Commons */,
+				BB7757AA22A3DAC3006421DA /* TableViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB7757A922A3DABB006421DA /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				BB7757AB22A3DAEF006421DA /* ActionButton.swift */,
+				BB7757BC22A3E82B006421DA /* ArticleCardView.swift */,
+				BB7757C222A3EAF3006421DA /* ArticleCardView.xib */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		BB7757AA22A3DAC3006421DA /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		BB7757AF22A3E08F006421DA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BB7757B222A3E0A9006421DA /* Montserrat-Bold.otf */,
+				BB7757B022A3E0A9006421DA /* Montserrat-ExtraLight.otf */,
+				BB7757B322A3E0A9006421DA /* Montserrat-ExtraLightItalic.otf */,
+				BB7757B122A3E0A9006421DA /* Montserrat-Medium.otf */,
+				BB7757B422A3E0A9006421DA /* Montserrat-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		BB7800CD22A173D90091BF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */,
 				BB7800F322A192900091BF55 /* HomeViewController.swift */,
 				BB7800F522A1934C0091BF55 /* TabBarController.swift */,
 			);
@@ -116,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7800F122A186460091BF55 /* ArticlesManager.swift */,
+				BB7757C622A3EDE2006421DA /* CategoriesManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -144,6 +214,7 @@
 		BB7800D622A176860091BF55 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB7757AF22A3E08F006421DA /* Fonts */,
 				BB8C994E22A16F1700801D54 /* Assets.xcassets */,
 				BB7800DC22A177FE0091BF55 /* Localizable.strings */,
 			);
@@ -153,8 +224,13 @@
 		BB7800D722A176A60091BF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BB7757C022A3EA28006421DA /* Date.swift */,
 				BB7800EF22A182A20091BF55 /* JSON.swift */,
+				BB7757BE22A3E854006421DA /* NibView.swift */,
 				BB1B825922A2B31F00DC5F2E /* UIColor.swift */,
+				BB7757B522A3E0FC006421DA /* UIFont.swift */,
+				BB7757AD22A3DFCD006421DA /* UIView.swift */,
+				BB7757C822A416CD006421DA /* CGPoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,17 +275,18 @@
 			isa = PBXGroup;
 			children = (
 				BB8C995322A16F1700801D54 /* Info.plist */,
-				BB8C994B22A16F1400801D54 /* QuickieNews.xcdatamodeld */,
 				BB8C994422A16F1400801D54 /* AppDelegate.swift */,
 				BB7800D722A176A60091BF55 /* Extensions */,
 				BB7800CF22A173E80091BF55 /* Managers */,
 				BB7800CE22A173E30091BF55 /* Models */,
 				BB7800E422A17C730091BF55 /* Protocols */,
+				BB8C994B22A16F1400801D54 /* QuickieNews.xcdatamodeld */,
 				BB7800D622A176860091BF55 /* Resources */,
 				BB7800D022A173ED0091BF55 /* Services */,
 				BB7800D522A1767F0091BF55 /* Storyboards */,
 				BB7800E122A17C3A0091BF55 /* Utils */,
 				BB7800CD22A173D90091BF55 /* ViewControllers */,
+				BB1B825B22A3D99900DC5F2E /* Views */,
 			);
 			path = QuickieNews;
 			sourceTree = "<group>";
@@ -276,13 +353,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7757BA22A3E143006421DA /* Montserrat-Medium.otf in Resources */,
 				BB7800FA22A277530091BF55 /* Category.storyboard in Resources */,
 				BB8C995222A16F1700801D54 /* LaunchScreen.storyboard in Resources */,
+				BB7757B922A3E141006421DA /* Montserrat-ExtraLightItalic.otf in Resources */,
 				BB7800FC22A2775E0091BF55 /* Articles.storyboard in Resources */,
 				BB7800F822A277450091BF55 /* Home.storyboard in Resources */,
 				BB7800DA22A177FE0091BF55 /* Localizable.strings in Resources */,
 				BB8C994F22A16F1700801D54 /* Assets.xcassets in Resources */,
+				BB7757C322A3EAF3006421DA /* ArticleCardView.xib in Resources */,
 				BB8C994A22A16F1400801D54 /* Main.storyboard in Resources */,
+				BB7757B822A3E132006421DA /* Montserrat-ExtraLight.otf in Resources */,
+				BB7757B722A3E130006421DA /* Montserrat-Bold.otf in Resources */,
+				BB7757BB22A3E145006421DA /* Montserrat-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,16 +471,25 @@
 				BB7800F622A1934C0091BF55 /* TabBarController.swift in Sources */,
 				BB7800DE22A17A200091BF55 /* APIService.swift in Sources */,
 				BB1B825A22A2B31F00DC5F2E /* UIColor.swift in Sources */,
+				BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */,
 				BB7800E822A17EFC0091BF55 /* ArticlesService.swift in Sources */,
+				BB7757AC22A3DAEF006421DA /* ActionButton.swift in Sources */,
 				BB7800F422A192900091BF55 /* HomeViewController.swift in Sources */,
+				BB7757B622A3E0FD006421DA /* UIFont.swift in Sources */,
+				BB7757C722A3EDE2006421DA /* CategoriesManager.swift in Sources */,
 				BB7800F222A186460091BF55 /* ArticlesManager.swift in Sources */,
 				BB7800EC22A17FF80091BF55 /* Source.swift in Sources */,
 				BB8C994D22A16F1400801D54 /* QuickieNews.xcdatamodeld in Sources */,
 				BB8C994522A16F1400801D54 /* AppDelegate.swift in Sources */,
 				BB7800D422A1766E0091BF55 /* R.generated.swift in Sources */,
 				BB7800E622A17C810091BF55 /* RoutePath.swift in Sources */,
+				BB7757BD22A3E82B006421DA /* ArticleCardView.swift in Sources */,
 				BB7800EA22A17FD20091BF55 /* Article.swift in Sources */,
+				BB7757C122A3EA28006421DA /* Date.swift in Sources */,
 				BB7800E022A17A7B0091BF55 /* APIError.swift in Sources */,
+				BB7757C522A3ECF4006421DA /* CategoriesViewController.swift in Sources */,
+				BB7757C922A416CD006421DA /* CGPoint.swift in Sources */,
+				BB7757BF22A3E854006421DA /* NibView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

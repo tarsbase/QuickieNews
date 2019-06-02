@@ -22,7 +22,7 @@ class APIService {
     private let newsAPIKey = "48df37d4832d44e9bf6a9eb967df4500"
     
     func urlForEndpoint(_ endpoint: String) -> String {
-        let urlString = newsAPIUrl + endpoint + "&\(newsAPIKey)"
+        let urlString = newsAPIUrl + endpoint + "?country=us&apiKey=\(newsAPIKey)"
         
         return urlString
     }

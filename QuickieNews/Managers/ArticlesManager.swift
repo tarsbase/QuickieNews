@@ -16,18 +16,30 @@ class ArticlesManager {
     let articlesService: ArticlesService
     
     var currentArticles: [Article]
-    let rx_reports = BehaviorSubject<[Article]>(value: [])
+    let rxArticles = BehaviorSubject<[Article]>(value: [])
     
     init() {
         articlesService = ArticlesService()
         currentArticles = []
     }
     
-    func getArticles(from category: String, completion: @escaping([Article]) -> Void) {
+    func getAllArticles(from categories: [String], completion: @escaping([Article]) -> Void) {
+        for category in categories {
+            getArticles(from: category) { articles in
+                completion(self.currentArticles)
+            }
+        }
+    }
+    
+    private func getArticles(from category: String, completion: @escaping([Article]) -> Void) {
         articlesService.getArticles(from: category) { (status, error, articles) in
             if status == .success, error == nil {
                 self.currentArticles.append(contentsOf: articles)
+                self.currentArticles.shuffle()
+                self.rxArticles.onNext(self.currentArticles)
             }
+            
+            completion(self.currentArticles)
         }
     }
 }
