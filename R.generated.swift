@@ -31,8 +31,37 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
+    /// Image `tabbar_articles_inactive`.
+    static let tabbar_articles_inactive = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_articles_inactive")
+    /// Image `tabbar_category_inactive`.
+    static let tabbar_category_inactive = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_category_inactive")
+    /// Image `tabbar_home_active`.
+    static let tabbar_home_active = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_home_active")
+    /// Image `tabbar_home_inactive`.
+    static let tabbar_home_inactive = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_home_inactive")
+    
+    /// `UIImage(named: "tabbar_articles_inactive", bundle: ..., traitCollection: ...)`
+    static func tabbar_articles_inactive(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbar_articles_inactive, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "tabbar_category_inactive", bundle: ..., traitCollection: ...)`
+    static func tabbar_category_inactive(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbar_category_inactive, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "tabbar_home_active", bundle: ..., traitCollection: ...)`
+    static func tabbar_home_active(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbar_home_active, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "tabbar_home_inactive", bundle: ..., traitCollection: ...)`
+    static func tabbar_home_inactive(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabbar_home_inactive, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
@@ -51,12 +80,33 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
+    /// Storyboard `Articles`.
+    static let articles = _R.storyboard.articles()
+    /// Storyboard `Category`.
+    static let category = _R.storyboard.category()
+    /// Storyboard `Home`.
+    static let home = _R.storyboard.home()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    
+    /// `UIStoryboard(name: "Articles", bundle: ...)`
+    static func articles(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.articles)
+    }
+    
+    /// `UIStoryboard(name: "Category", bundle: ...)`
+    static func category(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.category)
+    }
+    
+    /// `UIStoryboard(name: "Home", bundle: ...)`
+    static func home(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.home)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -73,18 +123,51 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 1 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 4 localization keys.
     struct localizable {
-      /// en translation: Une erreur est survenue
+      /// en translation: An error occurs
       /// 
       /// Locales: en
       static let internal_error_no_code = Rswift.StringResource(key: "internal_error_no_code", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Home
+      /// 
+      /// Locales: en
+      static let tabbar_home = Rswift.StringResource(key: "tabbar_home", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: My articles
+      /// 
+      /// Locales: en
+      static let tabbar_articles = Rswift.StringResource(key: "tabbar_articles", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: My interests
+      /// 
+      /// Locales: en
+      static let tabbar_categories = Rswift.StringResource(key: "tabbar_categories", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       
-      /// en translation: Une erreur est survenue
+      /// en translation: An error occurs
       /// 
       /// Locales: en
       static func internal_error_no_code(_: Void = ()) -> String {
         return NSLocalizedString("internal_error_no_code", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Home
+      /// 
+      /// Locales: en
+      static func tabbar_home(_: Void = ()) -> String {
+        return NSLocalizedString("tabbar_home", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: My articles
+      /// 
+      /// Locales: en
+      static func tabbar_articles(_: Void = ()) -> String {
+        return NSLocalizedString("tabbar_articles", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: My interests
+      /// 
+      /// Locales: en
+      static func tabbar_categories(_: Void = ()) -> String {
+        return NSLocalizedString("tabbar_categories", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}
@@ -95,7 +178,7 @@ struct R: Rswift.Validatable {
   
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
-      // There are no resources to validate
+      try _R.validate()
     }
     
     fileprivate init() {}
@@ -106,12 +189,84 @@ struct R: Rswift.Validatable {
   fileprivate init() {}
 }
 
-struct _R {
+struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try storyboard.validate()
+  }
+  
   struct nib {
     fileprivate init() {}
   }
   
-  struct storyboard {
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try articles.validate()
+      try home.validate()
+      try category.validate()
+    }
+    
+    struct articles: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let articlesNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "ArticlesNavigationController")
+      let articlesViewController = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "ArticlesViewController")
+      let bundle = R.hostingBundle
+      let name = "Articles"
+      
+      func articlesNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articlesNavigationController)
+      }
+      
+      func articlesViewController(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articlesViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.articles().articlesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articlesViewController' could not be loaded from storyboard 'Articles' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.articles().articlesNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articlesNavigationController' could not be loaded from storyboard 'Articles' as 'UIKit.UINavigationController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct category: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let categoriesViewController = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "CategoriesViewController")
+      let name = "Category"
+      
+      func categoriesViewController(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: categoriesViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.category().categoriesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'categoriesViewController' could not be loaded from storyboard 'Category' as 'UIKit.UIViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct home: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let homeNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "HomeNavigationController")
+      let homeViewController = StoryboardViewControllerResource<HomeViewController>(identifier: "HomeViewController")
+      let name = "Home"
+      
+      func homeNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: homeNavigationController)
+      }
+      
+      func homeViewController(_: Void = ()) -> HomeViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: homeViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.home().homeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'Home' as 'HomeViewController'.") }
+        if _R.storyboard.home().homeNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeNavigationController' could not be loaded from storyboard 'Home' as 'UIKit.UINavigationController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UIViewController
       
@@ -122,7 +277,7 @@ struct _R {
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = ViewController
+      typealias InitialController = TabBarController
       
       let bundle = R.hostingBundle
       let name = "Main"
