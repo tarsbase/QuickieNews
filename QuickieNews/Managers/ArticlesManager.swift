@@ -18,9 +18,13 @@ class ArticlesManager {
     var currentArticles: [Article]
     let rxArticles = BehaviorSubject<[Article]>(value: [])
     
+    var readLaterArticles: [Article]
+    let rxReadLaterArticles = BehaviorSubject<[Article]>(value: [])
+    
     init() {
         articlesService = ArticlesService()
         currentArticles = []
+        readLaterArticles = []
     }
     
     func getAllArticles(from categories: [String], completion: @escaping([Article]) -> Void) {
@@ -41,5 +45,10 @@ class ArticlesManager {
             
             completion(self.currentArticles)
         }
+    }
+    
+    func addToReadLaterArticles(_ article: Article) {
+        readLaterArticles.append(article)
+        rxReadLaterArticles.onNext(readLaterArticles)
     }
 }

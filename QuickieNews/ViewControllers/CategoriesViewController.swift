@@ -19,6 +19,7 @@ class CategoriesViewController: UIViewController {
     }
     
     private func setupTableView() {
+        tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -28,11 +29,11 @@ class CategoriesViewController: UIViewController {
 
 extension CategoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return CategoriesManager.shared.currentCategories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListPrototypeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
         if CategoriesManager.shared.currentCategories.indices.contains(indexPath.row) {
             let category = CategoriesManager.shared.currentCategories[indexPath.row]
@@ -49,10 +50,14 @@ extension CategoriesViewController: UITableViewDataSource {
 
 extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        if CategoriesManager.shared.currentCategories.indices.contains(indexPath.row) {
+        if CategoriesManager.shared.currentCategories.indices.contains(indexPath.row),
+            CategoriesManager.shared.selectedCategories.contains(CategoriesManager.shared.currentCategories[indexPath.row]) {
+            let category = CategoriesManager.shared.currentCategories[indexPath.row]
+            CategoriesManager.shared.selectedCategories.remove(at: CategoriesManager.shared.selectedCategories.firstIndex(of: category) ?? 0)
+        } else {
             CategoriesManager.shared.selectedCategories.append(CategoriesManager.shared.currentCategories[indexPath.row])
-            tableView.reloadData()
         }
+        
+        tableView.reloadData()
     }
 }

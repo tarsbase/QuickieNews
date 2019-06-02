@@ -10,17 +10,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Read Later View Controller-->
         <scene sceneID="foz-c9-hmC">
             <objects>
-                <viewController storyboardIdentifier="ArticlesViewController" id="mNJ-Ym-1lL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticlesViewController" id="mNJ-Ym-1lL" customClass="ReadLaterViewController" customModule="QuickieNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EYi-gL-Ll3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OSu-CL-QsE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OSu-CL-QsE" firstAttribute="leading" secondItem="ObA-co-ZJi" secondAttribute="leading" id="MKz-qW-7hS"/>
+                            <constraint firstItem="ObA-co-ZJi" firstAttribute="bottom" secondItem="OSu-CL-QsE" secondAttribute="bottom" id="TaK-yL-jjJ"/>
+                            <constraint firstItem="ObA-co-ZJi" firstAttribute="trailing" secondItem="OSu-CL-QsE" secondAttribute="trailing" id="ayY-rY-8E2"/>
+                            <constraint firstItem="OSu-CL-QsE" firstAttribute="top" secondItem="ObA-co-ZJi" secondAttribute="top" id="fZc-SJ-dwJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ObA-co-ZJi"/>
                     </view>
                     <navigationItem key="navigationItem" id="KQh-V7-WQ9"/>
+                    <connections>
+                        <outlet property="tableView" destination="OSu-CL-QsE" id="vnw-6w-xI1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM7-WT-Oe7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

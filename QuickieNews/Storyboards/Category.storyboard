@@ -10,16 +10,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Categories View Controller-->
         <scene sceneID="wIW-nM-ilP">
             <objects>
-                <viewController storyboardIdentifier="CategoriesViewController" id="JNA-DA-6jF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesViewController" id="JNA-DA-6jF" customClass="CategoriesViewController" customModule="QuickieNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gXe-xk-JpA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rQc-Dj-RAg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryCell" textLabel="X9M-m6-3Y5" style="IBUITableViewCellStyleDefault" id="QXV-pv-Bwi">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QXV-pv-Bwi" id="FPz-Nz-G5W">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X9M-m6-3Y5">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rQc-Dj-RAg" firstAttribute="top" secondItem="TIW-jV-FKz" secondAttribute="top" id="260-VU-h1c"/>
+                            <constraint firstItem="rQc-Dj-RAg" firstAttribute="leading" secondItem="TIW-jV-FKz" secondAttribute="leading" id="R1O-1l-fCn"/>
+                            <constraint firstItem="TIW-jV-FKz" firstAttribute="trailing" secondItem="rQc-Dj-RAg" secondAttribute="trailing" id="XSo-ij-WVi"/>
+                            <constraint firstItem="TIW-jV-FKz" firstAttribute="bottom" secondItem="rQc-Dj-RAg" secondAttribute="bottom" id="y3X-Ub-A9g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TIW-jV-FKz"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="rQc-Dj-RAg" id="lyo-yi-0BF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mh1-Hl-gQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

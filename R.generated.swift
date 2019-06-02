@@ -179,21 +179,31 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `ArticleCardView`.
     static let articleCardView = _R.nib._ArticleCardView()
+    /// Nib `ArticleCell`.
+    static let articleCell = _R.nib._ArticleCell()
     
     /// `UINib(name: "ArticleCardView", in: bundle)`
     static func articleCardView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.articleCardView)
     }
     
+    /// `UINib(name: "ArticleCell", in: bundle)`
+    static func articleCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.articleCell)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `CategoryCell`.
+    static let categoryCell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "CategoryCell")
+    
     fileprivate init() {}
   }
   
@@ -339,6 +349,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _ArticleCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ArticleCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ArticleCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ArticleCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -353,7 +374,7 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
       let articlesNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "ArticlesNavigationController")
-      let articlesViewController = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "ArticlesViewController")
+      let articlesViewController = StoryboardViewControllerResource<ReadLaterViewController>(identifier: "ArticlesViewController")
       let bundle = R.hostingBundle
       let name = "Articles"
       
@@ -361,12 +382,12 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articlesNavigationController)
       }
       
-      func articlesViewController(_: Void = ()) -> UIKit.UIViewController? {
+      func articlesViewController(_: Void = ()) -> ReadLaterViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articlesViewController)
       }
       
       static func validate() throws {
-        if _R.storyboard.articles().articlesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articlesViewController' could not be loaded from storyboard 'Articles' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.articles().articlesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articlesViewController' could not be loaded from storyboard 'Articles' as 'ReadLaterViewController'.") }
         if _R.storyboard.articles().articlesNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articlesNavigationController' could not be loaded from storyboard 'Articles' as 'UIKit.UINavigationController'.") }
       }
       
@@ -375,15 +396,15 @@ struct _R: Rswift.Validatable {
     
     struct category: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let categoriesViewController = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "CategoriesViewController")
+      let categoriesViewController = StoryboardViewControllerResource<CategoriesViewController>(identifier: "CategoriesViewController")
       let name = "Category"
       
-      func categoriesViewController(_: Void = ()) -> UIKit.UIViewController? {
+      func categoriesViewController(_: Void = ()) -> CategoriesViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: categoriesViewController)
       }
       
       static func validate() throws {
-        if _R.storyboard.category().categoriesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'categoriesViewController' could not be loaded from storyboard 'Category' as 'UIKit.UIViewController'.") }
+        if _R.storyboard.category().categoriesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'categoriesViewController' could not be loaded from storyboard 'Category' as 'CategoriesViewController'.") }
       }
       
       fileprivate init() {}

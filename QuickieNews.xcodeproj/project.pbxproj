@@ -24,6 +24,10 @@
 		BB7757C522A3ECF4006421DA /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */; };
 		BB7757C722A3EDE2006421DA /* CategoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C622A3EDE2006421DA /* CategoriesManager.swift */; };
 		BB7757C922A416CD006421DA /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C822A416CD006421DA /* CGPoint.swift */; };
+		BB7757CB22A4758B006421DA /* ReadLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757CA22A4758B006421DA /* ReadLaterViewController.swift */; };
+		BB7757CD22A476A7006421DA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757CC22A476A7006421DA /* UITableView.swift */; };
+		BB7757CF22A4772F006421DA /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757CE22A4772F006421DA /* ArticleCell.swift */; };
+		BB7757D122A47743006421DA /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7757D022A47743006421DA /* ArticleCell.xib */; };
 		BB7800D422A1766E0091BF55 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7800D322A1766D0091BF55 /* R.generated.swift */; };
 		BB7800DA22A177FE0091BF55 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB7800DC22A177FE0091BF55 /* Localizable.strings */; };
 		BB7800DE22A17A200091BF55 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7800DD22A17A200091BF55 /* APIService.swift */; };
@@ -67,6 +71,10 @@
 		BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		BB7757C622A3EDE2006421DA /* CategoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesManager.swift; sourceTree = "<group>"; };
 		BB7757C822A416CD006421DA /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		BB7757CA22A4758B006421DA /* ReadLaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadLaterViewController.swift; sourceTree = "<group>"; };
+		BB7757CC22A476A7006421DA /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		BB7757CE22A4772F006421DA /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		BB7757D022A47743006421DA /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		BB7800D322A1766D0091BF55 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BB7800DB22A177FE0091BF55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB7800DD22A17A200091BF55 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -145,6 +153,8 @@
 		BB7757AA22A3DAC3006421DA /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				BB7757CE22A4772F006421DA /* ArticleCell.swift */,
+				BB7757D022A47743006421DA /* ArticleCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -166,6 +176,7 @@
 			children = (
 				BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */,
 				BB7800F322A192900091BF55 /* HomeViewController.swift */,
+				BB7757CA22A4758B006421DA /* ReadLaterViewController.swift */,
 				BB7800F522A1934C0091BF55 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
@@ -224,13 +235,14 @@
 		BB7800D722A176A60091BF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BB7757C822A416CD006421DA /* CGPoint.swift */,
 				BB7757C022A3EA28006421DA /* Date.swift */,
 				BB7800EF22A182A20091BF55 /* JSON.swift */,
 				BB7757BE22A3E854006421DA /* NibView.swift */,
 				BB1B825922A2B31F00DC5F2E /* UIColor.swift */,
 				BB7757B522A3E0FC006421DA /* UIFont.swift */,
+				BB7757CC22A476A7006421DA /* UITableView.swift */,
 				BB7757AD22A3DFCD006421DA /* UIView.swift */,
-				BB7757C822A416CD006421DA /* CGPoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +369,7 @@
 				BB7800FA22A277530091BF55 /* Category.storyboard in Resources */,
 				BB8C995222A16F1700801D54 /* LaunchScreen.storyboard in Resources */,
 				BB7757B922A3E141006421DA /* Montserrat-ExtraLightItalic.otf in Resources */,
+				BB7757D122A47743006421DA /* ArticleCell.xib in Resources */,
 				BB7800FC22A2775E0091BF55 /* Articles.storyboard in Resources */,
 				BB7800F822A277450091BF55 /* Home.storyboard in Resources */,
 				BB7800DA22A177FE0091BF55 /* Localizable.strings in Resources */,
@@ -469,9 +482,12 @@
 				BB7800F022A182A20091BF55 /* JSON.swift in Sources */,
 				BB7800E322A17C4A0091BF55 /* Routes.swift in Sources */,
 				BB7800F622A1934C0091BF55 /* TabBarController.swift in Sources */,
+				BB7757CF22A4772F006421DA /* ArticleCell.swift in Sources */,
 				BB7800DE22A17A200091BF55 /* APIService.swift in Sources */,
+				BB7757CD22A476A7006421DA /* UITableView.swift in Sources */,
 				BB1B825A22A2B31F00DC5F2E /* UIColor.swift in Sources */,
 				BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */,
+				BB7757CB22A4758B006421DA /* ReadLaterViewController.swift in Sources */,
 				BB7800E822A17EFC0091BF55 /* ArticlesService.swift in Sources */,
 				BB7757AC22A3DAEF006421DA /* ActionButton.swift in Sources */,
 				BB7800F422A192900091BF55 /* HomeViewController.swift in Sources */,

@@ -19,7 +19,7 @@ class CategoriesManager {
     let rxCategories = BehaviorSubject<[String]>(value: [])
     
     init() {
-        currentCategories = []
+        currentCategories = ["Sport", "Business", "Technology"]
         selectedCategories = []
     }
 }

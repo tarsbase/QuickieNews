@@ -174,6 +174,10 @@ extension HomeViewController {
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.removeFromSuperview()
+                if let article = ArticlesManager.shared.currentArticles.last {
+                    ArticlesManager.shared.addToReadLaterArticles(article)
+                    ArticlesManager.shared.currentArticles.removeLast()
+                }
             }
         })
     }
