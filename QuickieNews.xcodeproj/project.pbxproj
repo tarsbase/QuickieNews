@@ -28,6 +28,7 @@
 		BB7757CD22A476A7006421DA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757CC22A476A7006421DA /* UITableView.swift */; };
 		BB7757CF22A4772F006421DA /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757CE22A4772F006421DA /* ArticleCell.swift */; };
 		BB7757D122A47743006421DA /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7757D022A47743006421DA /* ArticleCell.xib */; };
+		BB7757D322A5092C006421DA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757D222A5092C006421DA /* Utils.swift */; };
 		BB7800D422A1766E0091BF55 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7800D322A1766D0091BF55 /* R.generated.swift */; };
 		BB7800DA22A177FE0091BF55 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB7800DC22A177FE0091BF55 /* Localizable.strings */; };
 		BB7800DE22A17A200091BF55 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7800DD22A17A200091BF55 /* APIService.swift */; };
@@ -75,6 +76,7 @@
 		BB7757CC22A476A7006421DA /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		BB7757CE22A4772F006421DA /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		BB7757D022A47743006421DA /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		BB7757D222A5092C006421DA /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BB7800D322A1766D0091BF55 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BB7800DB22A177FE0091BF55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB7800DD22A17A200091BF55 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7800E222A17C4A0091BF55 /* Routes.swift */,
+				BB7757D222A5092C006421DA /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				BB7800DE22A17A200091BF55 /* APIService.swift in Sources */,
 				BB7757CD22A476A7006421DA /* UITableView.swift in Sources */,
 				BB1B825A22A2B31F00DC5F2E /* UIColor.swift in Sources */,
+				BB7757D322A5092C006421DA /* Utils.swift in Sources */,
 				BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */,
 				BB7757CB22A4758B006421DA /* ReadLaterViewController.swift in Sources */,
 				BB7800E822A17EFC0091BF55 /* ArticlesService.swift in Sources */,
@@ -590,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -645,7 +649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

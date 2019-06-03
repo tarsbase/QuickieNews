@@ -25,6 +25,7 @@ class ArticlesManager {
         articlesService = ArticlesService()
         currentArticles = []
         readLaterArticles = []
+        getArticlesFromCache()
     }
     
     func getAllArticles(from categories: [String], completion: @escaping([Article]) -> Void) {
@@ -47,8 +48,27 @@ class ArticlesManager {
         }
     }
     
+    private func getArticlesFromCache() {
+        do {
+            if let readLaterArticlesData = UserDefaults.standard.data(forKey: UserPrefs.readLaterArticles),
+                let readLaterArticles = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(readLaterArticlesData) as? [Article] {
+                self.readLaterArticles = readLaterArticles
+            }
+        } catch {
+            print("Cannot unarchive readLaterArticles data")
+        }
+    }
+    
     func addToReadLaterArticles(_ article: Article) {
         readLaterArticles.append(article)
         rxReadLaterArticles.onNext(readLaterArticles)
+        
+        do {
+            let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: readLaterArticles, requiringSecureCoding: false)
+            UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.readLaterArticles)
+            UserDefaults.standard.synchronize()
+        } catch {
+            fatalError("Cannot archive readLaterArticles data")
+        }
     }
 }
