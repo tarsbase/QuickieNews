@@ -112,11 +112,11 @@ extension HomeViewController {
 extension HomeViewController {
     enum CardPlacement {
         init(deltaToCenter: CGPoint) {
-            if deltaToCenter.x < -(UIScreen.main.bounds.width / 5.0) {
+            if deltaToCenter.x < -.deltaWidth {
                 self = .left
-            } else if deltaToCenter.x > (UIScreen.main.bounds.width / 5.0) {
+            } else if deltaToCenter.x > .deltaWidth {
                 self = .right
-            } else if deltaToCenter.y < -(UIScreen.main.bounds.height / 5.0) {
+            } else if deltaToCenter.y < -.deltaHeight {
                 self = .top
             } else {
                 self = .center
@@ -136,7 +136,7 @@ extension HomeViewController {
             let deltaToCenter = card.center - cardsMainView.center
             let cardPlacement = CardPlacement(deltaToCenter: deltaToCenter)
             
-            card.transform = CGAffineTransform(rotationAngle: (.pi / 4.0) * (deltaToCenter.x / (2.0 * UIScreen.main.bounds.width)))
+            card.transform = CGAffineTransform(rotationAngle: .rotationAngle * (deltaToCenter.x / .rotationAngleLimit))
             if abs(deltaToCenter.y) > (UIScreen.main.bounds.height / 10.0) {
                 card.nowImageView.alpha = 3.0 * abs(deltaToCenter.y) / cardsMainView.center.y
                 card.laterImageView.alpha = 0.0
@@ -184,7 +184,7 @@ extension HomeViewController {
         UIView.animate(withDuration: 0.4, animations: {
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.center = CGPoint(x: -2.0 * UIScreen.main.bounds.width, y: self.cardsMainView.center.y)
-                card.transform = CGAffineTransform(rotationAngle: -.pi / 4.0)
+                card.transform = CGAffineTransform(rotationAngle: -.rotationAngle)
             }
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
@@ -198,7 +198,7 @@ extension HomeViewController {
         UIView.animate(withDuration: 0.4, animations: {
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.center = CGPoint(x: 2.0 * UIScreen.main.bounds.width, y: self.cardsMainView.center.y)
-                card.transform = CGAffineTransform(rotationAngle: .pi / 4.0)
+                card.transform = CGAffineTransform(rotationAngle: .rotationAngle)
             }
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {

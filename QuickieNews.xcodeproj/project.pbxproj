@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		42E8C27F94A34F9B77FCDD43 /* Pods_QuickieNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A828E91A4CC623D5ABD9A3 /* Pods_QuickieNews.framework */; };
 		BB1B825A22A2B31F00DC5F2E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B825922A2B31F00DC5F2E /* UIColor.swift */; };
+		BB2EB8B422AA71C200550EDF /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EB8B322AA71C200550EDF /* CGFloat.swift */; };
 		BB7757AC22A3DAEF006421DA /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AB22A3DAEF006421DA /* ActionButton.swift */; };
 		BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AD22A3DFCD006421DA /* UIView.swift */; };
 		BB7757B622A3E0FD006421DA /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757B522A3E0FC006421DA /* UIFont.swift */; };
@@ -57,6 +58,7 @@
 		15B094A94056EBF5CAA095ED /* Pods-QuickieNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickieNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickieNews/Pods-QuickieNews.debug.xcconfig"; sourceTree = "<group>"; };
 		35A828E91A4CC623D5ABD9A3 /* Pods_QuickieNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickieNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B825922A2B31F00DC5F2E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BB2EB8B322AA71C200550EDF /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		BB7757AB22A3DAEF006421DA /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		BB7757AD22A3DFCD006421DA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BB7757B022A3E0A9006421DA /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		BB7800D722A176A60091BF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BB2EB8B322AA71C200550EDF /* CGFloat.swift */,
 				BB7757C822A416CD006421DA /* CGPoint.swift */,
 				BB7757C022A3EA28006421DA /* Date.swift */,
 				BB7800EF22A182A20091BF55 /* JSON.swift */,
@@ -481,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2EB8B422AA71C200550EDF /* CGFloat.swift in Sources */,
 				BB7800EE22A180ED0091BF55 /* Reusable.swift in Sources */,
 				BB7800F022A182A20091BF55 /* JSON.swift in Sources */,
 				BB7800E322A17C4A0091BF55 /* Routes.swift in Sources */,
