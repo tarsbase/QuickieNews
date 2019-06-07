@@ -39,7 +39,8 @@ extension CategoriesViewController: UITableViewDataSource {
             let category = CategoriesManager.shared.currentCategories[indexPath.row]
             cell.textLabel?.text = category
             cell.selectionStyle = .none
-            cell.accessoryType = CategoriesManager.shared.selectedCategories.contains(CategoriesManager.shared.currentCategories[indexPath.row]) ? .checkmark : .none
+            cell.accessoryType = CategoriesManager.shared.isSelected(CategoriesManager.shared.currentCategories[indexPath.row]) ? .checkmark
+                                                                                                                                : .none
         }
         
         return cell
@@ -53,9 +54,9 @@ extension CategoriesViewController: UITableViewDelegate {
         if CategoriesManager.shared.currentCategories.indices.contains(indexPath.row),
             CategoriesManager.shared.selectedCategories.contains(CategoriesManager.shared.currentCategories[indexPath.row]) {
             let category = CategoriesManager.shared.currentCategories[indexPath.row]
-            CategoriesManager.shared.selectedCategories.remove(at: CategoriesManager.shared.selectedCategories.firstIndex(of: category) ?? 0)
+            CategoriesManager.shared.remove(selectedCategory: category)
         } else {
-            CategoriesManager.shared.selectedCategories.append(CategoriesManager.shared.currentCategories[indexPath.row])
+            CategoriesManager.shared.add(selectedCategory: CategoriesManager.shared.currentCategories[indexPath.row])
         }
         
         tableView.reloadData()

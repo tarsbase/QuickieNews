@@ -12,6 +12,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet private weak var noCategoryLabel: UILabel!
+    
     @IBOutlet private weak var cardsMainView: UIView!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
@@ -21,12 +23,21 @@ class HomeViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private var currentArticleIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
         setupButtons()
         setupCards()
         setupListeners()
+    }
+    
+    private func setupView() {
+        noCategoryLabel.font = .h4()
+        noCategoryLabel.textColor = .qnGrey
+        noCategoryLabel.text = R.string.localizable.home_no_category()
     }
     
     private func setupButtons() {
@@ -41,25 +52,42 @@ class HomeViewController: UIViewController {
     }
     
     private func setupCards() {
-        activityIndicator.startAnimating()
-        
-        ArticlesManager.shared.getAllArticles(from: ["Sports"]/*CategoriesManager.shared.selectedCategories*/) { articles in
-            self.activityIndicator.stopAnimating()
+        if CategoriesManager.shared.selectedCategories.isEmpty {
+            noCategoryLabel.isHidden = false
+            cardsMainView.isHidden = true
+        } else {
+            noCategoryLabel.isHidden = true
+            cardsMainView.isHidden = false
+            cardsMainView.subviews.forEach({ $0.removeFromSuperview() })
+            activityIndicator.startAnimating()
             
-            for article in articles {
-                let articleCardView = ArticleCardView()
-                articleCardView.configure(with: article)
-                articleCardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panCard)))
+            ArticlesManager.shared.getAllArticles(from: CategoriesManager.shared.selectedCategories) { articles in
+                self.activityIndicator.stopAnimating()
                 
-                self.cardsMainView.addSubview(articleCardView)
-                articleCardView.bounds = self.cardsMainView.frame
-                articleCardView.center = self.cardsMainView.center
+                for (index, article) in articles.enumerated() {
+                    self.currentArticleIndex = index
+                    guard index < 2 else {
+                        // Add the only two first articles in display
+                        return
+                    }
+                    
+                    let articleCardView = ArticleCardView()
+                    articleCardView.configure(with: article)
+                    articleCardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panCard)))
+                    
+                    self.cardsMainView.addSubview(articleCardView)
+                    articleCardView.bounds = self.cardsMainView.frame
+                    articleCardView.center = self.cardsMainView.center
+                    ArticlesManager.shared.currentArticles.remove(at: self.currentArticleIndex)
+                }
             }
         }
     }
     
     private func setupListeners() {
-        
+        CategoriesManager.shared.rxSelectedCategories.subscribe { _ in
+            self.setupCards()
+        }.disposed(by: disposeBag)
     }
 }
 
@@ -108,7 +136,7 @@ extension HomeViewController {
             let deltaToCenter = card.center - cardsMainView.center
             let cardPlacement = CardPlacement(deltaToCenter: deltaToCenter)
             
-            card.transform = CGAffineTransform(rotationAngle: (.pi / 4.0) * (deltaToCenter.x / cardsMainView.center.x))
+            card.transform = CGAffineTransform(rotationAngle: (.pi / 4.0) * (deltaToCenter.x / (2.0 * UIScreen.main.bounds.width)))
             if abs(deltaToCenter.y) > (UIScreen.main.bounds.height / 10.0) {
                 card.nowImageView.alpha = 3.0 * abs(deltaToCenter.y) / cardsMainView.center.y
                 card.laterImageView.alpha = 0.0
@@ -161,6 +189,7 @@ extension HomeViewController {
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.removeFromSuperview()
+                self.nextCard()
             }
         })
     }
@@ -174,9 +203,9 @@ extension HomeViewController {
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.removeFromSuperview()
-                if let article = ArticlesManager.shared.currentArticles.last {
+                if let article = card.article {
                     ArticlesManager.shared.addToReadLaterArticles(article)
-                    ArticlesManager.shared.currentArticles.removeLast()
+                    self.nextCard()
                 }
             }
         })
@@ -190,7 +219,28 @@ extension HomeViewController {
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.removeFromSuperview()
+                self.nextCard()
             }
         })
+    }
+    
+    private func nextCard() {
+        currentArticleIndex += 1
+        guard ArticlesManager.shared.currentArticles.indices.contains(currentArticleIndex) else {
+            return
+        }
+        
+        let articleCardView = ArticleCardView()
+        articleCardView.configure(with: ArticlesManager.shared.currentArticles[currentArticleIndex])
+        articleCardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard)))
+        articleCardView.isHidden = true
+        
+        self.cardsMainView.addSubview(articleCardView)
+        self.cardsMainView.sendSubviewToBack(articleCardView)
+        articleCardView.bounds = cardsMainView.frame
+        articleCardView.center = cardsMainView.center
+        articleCardView.isHidden = false
+        
+        ArticlesManager.shared.currentArticles.remove(at: currentArticleIndex)
     }
 }

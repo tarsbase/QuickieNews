@@ -11,8 +11,11 @@
 
 // MARK: TabBarController
 "tabbar_home" = "Home";
-"tabbar_categories" = "My interests";
+"tabbar_categories" = "My topics";
 "tabbar_articles" = "My articles";
+
+// MARK: HomeViewController
+"home_no_category" = "You didn't selected any topic";
 
 // MARK: ArticleCardView
 "article_card_date" = "Published on the %@";

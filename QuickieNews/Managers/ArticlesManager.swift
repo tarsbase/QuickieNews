@@ -29,6 +29,7 @@ class ArticlesManager {
     }
     
     func getAllArticles(from categories: [String], completion: @escaping([Article]) -> Void) {
+        currentArticles.removeAll()
         for category in categories {
             getArticles(from: category) { articles in
                 completion(self.currentArticles)

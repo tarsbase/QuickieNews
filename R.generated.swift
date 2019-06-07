@@ -255,7 +255,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
     struct localizable {
       /// en translation: An error occurs
       /// 
@@ -269,7 +269,7 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en
       static let tabbar_articles = Rswift.StringResource(key: "tabbar_articles", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
-      /// en translation: My interests
+      /// en translation: My topics
       /// 
       /// Locales: en
       static let tabbar_categories = Rswift.StringResource(key: "tabbar_categories", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
@@ -277,6 +277,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en
       static let article_card_date = Rswift.StringResource(key: "article_card_date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: You didn't selected any topic
+      /// 
+      /// Locales: en
+      static let home_no_category = Rswift.StringResource(key: "home_no_category", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       
       /// en translation: An error occurs
       /// 
@@ -299,7 +303,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("tabbar_articles", bundle: R.hostingBundle, comment: "")
       }
       
-      /// en translation: My interests
+      /// en translation: My topics
       /// 
       /// Locales: en
       static func tabbar_categories(_: Void = ()) -> String {
@@ -311,6 +315,13 @@ struct R: Rswift.Validatable {
       /// Locales: en
       static func article_card_date(_ value1: String) -> String {
         return String(format: NSLocalizedString("article_card_date", bundle: R.hostingBundle, comment: ""), locale: R.applicationLocale, value1)
+      }
+      
+      /// en translation: You didn't selected any topic
+      /// 
+      /// Locales: en
+      static func home_no_category(_: Void = ()) -> String {
+        return NSLocalizedString("home_no_category", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}
