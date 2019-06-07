@@ -20,14 +20,15 @@ class ReadLaterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupHero()
+        setupNagivationBar()
         setupTableView()
         setupListeners()
     }
     
-    private func setupHero() {
+    private func setupNagivationBar() {
+        title = R.string.localizable.read_later_title()
         navigationController?.hero.isEnabled = true
-        navigationController?.hero.navigationAnimationType = .zoom
+        navigationController?.hero.navigationAnimationType = .fade
     }
     
     private func setupTableView() {
@@ -37,7 +38,7 @@ class ReadLaterViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        ArticleCell.registerWith(tableView)
+        ArticleCell.registerNibWith(tableView)
     }
     
     private func setupListeners() {
@@ -71,6 +72,12 @@ extension ReadLaterViewController: UITableViewDataSource {
 
 extension ReadLaterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if ArticlesManager.shared.readLaterArticles.indices.contains(indexPath.row) {
+            if let articleReaderVC = R.storyboard.articles.articleReaderViewController() {
+                articleReaderVC.initialize(with: ArticlesManager.shared.readLaterArticles[indexPath.row])
+                
+                navigationController?.pushViewController(articleReaderVC, animated: true)
+            }
+        }
     }
 }

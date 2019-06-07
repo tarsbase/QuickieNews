@@ -34,7 +34,7 @@ class TabBarController: UITabBarController {
                                                            image: R.image.tabbar_home_inactive(),
                                                            selectedImage: R.image.tabbar_home_active())
         
-        articlesNavigationController.setNavigationBarHidden(true, animated: false)
+        articlesNavigationController.setNavigationBarHidden(false, animated: false)
         articlesNavigationController.tabBarItem = UITabBarItem(title: R.string.localizable.tabbar_articles(),
                                                                image: R.image.tabbar_articles_inactive(),
                                                                selectedImage: R.image.tabbar_articles_inactive())

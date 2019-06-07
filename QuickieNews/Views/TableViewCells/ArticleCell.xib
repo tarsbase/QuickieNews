@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="115.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IEt-zp-VJm">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IEt-zp-VJm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="120" id="K8J-Xg-oF9"/>
@@ -42,8 +41,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="articleImageView" destination="IEt-zp-VJm" id="3hI-Ap-QvU"/>
-                <outlet property="titleLabel" destination="cqw-b1-sq9" id="utP-fr-Oi2"/>
+                <outlet property="articleImageView" destination="IEt-zp-VJm" id="owv-YC-XaC"/>
+                <outlet property="titleLabel" destination="cqw-b1-sq9" id="iha-O0-fUB"/>
             </connections>
             <point key="canvasLocation" x="-130.43478260869566" y="37.5"/>
         </tableViewCell>

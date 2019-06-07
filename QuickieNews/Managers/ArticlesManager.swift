@@ -61,9 +61,20 @@ class ArticlesManager {
     }
     
     func addToReadLaterArticles(_ article: Article) {
-        readLaterArticles.append(article)
+        readLaterArticles.insert(article, at: 0)
         rxReadLaterArticles.onNext(readLaterArticles)
         
+        saveReadLaterArticlesToCache()
+    }
+    
+    func removeFromReadLaterArticles(_ article: Article) {
+        readLaterArticles.removeAll(where: { $0.title == article.title })
+        rxReadLaterArticles.onNext(readLaterArticles)
+        
+        saveReadLaterArticlesToCache()
+    }
+    
+    private func saveReadLaterArticlesToCache() {
         do {
             let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: readLaterArticles, requiringSecureCoding: false)
             UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.readLaterArticles)

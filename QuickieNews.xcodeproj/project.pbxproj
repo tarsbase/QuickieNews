@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		42E8C27F94A34F9B77FCDD43 /* Pods_QuickieNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A828E91A4CC623D5ABD9A3 /* Pods_QuickieNews.framework */; };
 		BB1B825A22A2B31F00DC5F2E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B825922A2B31F00DC5F2E /* UIColor.swift */; };
+		BB2464D222AAC8E6007C2E53 /* ArticleReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2464D122AAC8E6007C2E53 /* ArticleReaderViewController.swift */; };
+		BB2464D422AACF66007C2E53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2464D322AACF66007C2E53 /* String.swift */; };
 		BB2EB8B422AA71C200550EDF /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EB8B322AA71C200550EDF /* CGFloat.swift */; };
 		BB7757AC22A3DAEF006421DA /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AB22A3DAEF006421DA /* ActionButton.swift */; };
 		BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AD22A3DFCD006421DA /* UIView.swift */; };
@@ -58,6 +60,8 @@
 		15B094A94056EBF5CAA095ED /* Pods-QuickieNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickieNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickieNews/Pods-QuickieNews.debug.xcconfig"; sourceTree = "<group>"; };
 		35A828E91A4CC623D5ABD9A3 /* Pods_QuickieNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickieNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B825922A2B31F00DC5F2E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BB2464D122AAC8E6007C2E53 /* ArticleReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReaderViewController.swift; sourceTree = "<group>"; };
+		BB2464D322AACF66007C2E53 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BB2EB8B322AA71C200550EDF /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		BB7757AB22A3DAEF006421DA /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		BB7757AD22A3DFCD006421DA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		BB7800CD22A173D90091BF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB2464D122AAC8E6007C2E53 /* ArticleReaderViewController.swift */,
 				BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */,
 				BB7800F322A192900091BF55 /* HomeViewController.swift */,
 				BB7757CA22A4758B006421DA /* ReadLaterViewController.swift */,
@@ -244,6 +249,7 @@
 				BB7757C022A3EA28006421DA /* Date.swift */,
 				BB7800EF22A182A20091BF55 /* JSON.swift */,
 				BB7757BE22A3E854006421DA /* NibView.swift */,
+				BB2464D322AACF66007C2E53 /* String.swift */,
 				BB1B825922A2B31F00DC5F2E /* UIColor.swift */,
 				BB7757B522A3E0FC006421DA /* UIFont.swift */,
 				BB7757CC22A476A7006421DA /* UITableView.swift */,
@@ -484,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2464D222AAC8E6007C2E53 /* ArticleReaderViewController.swift in Sources */,
 				BB2EB8B422AA71C200550EDF /* CGFloat.swift in Sources */,
 				BB7800EE22A180ED0091BF55 /* Reusable.swift in Sources */,
 				BB7800F022A182A20091BF55 /* JSON.swift in Sources */,
@@ -513,6 +520,7 @@
 				BB7800E022A17A7B0091BF55 /* APIError.swift in Sources */,
 				BB7757C522A3ECF4006421DA /* CategoriesViewController.swift in Sources */,
 				BB7757C922A416CD006421DA /* CGPoint.swift in Sources */,
+				BB2464D422AACF66007C2E53 /* String.swift in Sources */,
 				BB7757BF22A3E854006421DA /* NibView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,5 +17,8 @@
 // MARK: HomeViewController
 "home_no_category" = "You didn't selected any topic";
 
+// MARK: ReadLaterViewController
+"read_later_title" = "My articles to read";
+
 // MARK: ArticleCardView
 "article_card_date" = "Published on the %@";

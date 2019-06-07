@@ -6,7 +6,6 @@
 //  Copyright © 2019 Nicolas Mulet. All rights reserved.
 //
 
-import QuartzCore
 import SDWebImage
 import UIKit
 

@@ -220,6 +220,12 @@ extension HomeViewController {
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.removeFromSuperview()
                 self.nextCard()
+                
+                if let article = card.article, let articleReaderVC = R.storyboard.articles.articleReaderViewController() {
+                    articleReaderVC.initialize(with: article)
+                    
+                    self.navigationController?.pushViewController(articleReaderVC, animated: true)
+                }
             }
         })
     }

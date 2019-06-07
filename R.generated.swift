@@ -255,7 +255,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
     struct localizable {
       /// en translation: An error occurs
       /// 
@@ -269,6 +269,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en
       static let tabbar_articles = Rswift.StringResource(key: "tabbar_articles", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: My articles to read
+      /// 
+      /// Locales: en
+      static let read_later_title = Rswift.StringResource(key: "read_later_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: My topics
       /// 
       /// Locales: en
@@ -301,6 +305,13 @@ struct R: Rswift.Validatable {
       /// Locales: en
       static func tabbar_articles(_: Void = ()) -> String {
         return NSLocalizedString("tabbar_articles", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: My articles to read
+      /// 
+      /// Locales: en
+      static func read_later_title(_: Void = ()) -> String {
+        return NSLocalizedString("read_later_title", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: My topics
@@ -384,10 +395,15 @@ struct _R: Rswift.Validatable {
     struct articles: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
+      let articleReaderViewController = StoryboardViewControllerResource<ArticleReaderViewController>(identifier: "ArticleReaderViewController")
       let articlesNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "ArticlesNavigationController")
       let articlesViewController = StoryboardViewControllerResource<ReadLaterViewController>(identifier: "ArticlesViewController")
       let bundle = R.hostingBundle
       let name = "Articles"
+      
+      func articleReaderViewController(_: Void = ()) -> ArticleReaderViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleReaderViewController)
+      }
       
       func articlesNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articlesNavigationController)
@@ -399,6 +415,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if _R.storyboard.articles().articlesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articlesViewController' could not be loaded from storyboard 'Articles' as 'ReadLaterViewController'.") }
+        if _R.storyboard.articles().articleReaderViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleReaderViewController' could not be loaded from storyboard 'Articles' as 'ArticleReaderViewController'.") }
         if _R.storyboard.articles().articlesNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articlesNavigationController' could not be loaded from storyboard 'Articles' as 'UIKit.UINavigationController'.") }
       }
       

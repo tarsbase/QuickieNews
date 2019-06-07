@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,6 +39,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM7-WT-Oe7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1018.840579710145" y="166.74107142857142"/>
+        </scene>
+        <!--Article Reader View Controller-->
+        <scene sceneID="0qd-Nr-yBu">
+            <objects>
+                <viewController storyboardIdentifier="ArticleReaderViewController" id="dAn-gd-rf8" customClass="ArticleReaderViewController" customModule="QuickieNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z4a-SU-JjI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jQp-zq-9g3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXw-HU-wiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1997" y="167"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9BM-Ye-obl">
