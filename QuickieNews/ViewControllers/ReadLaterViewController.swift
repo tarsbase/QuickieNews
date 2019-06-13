@@ -34,7 +34,7 @@ class ReadLaterViewController: UIViewController {
     private func setupTableView() {
         tableView.separatorColor = .clear
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 120.0
+        tableView.rowHeight = 160.0
         tableView.dataSource = self
         tableView.delegate = self
         

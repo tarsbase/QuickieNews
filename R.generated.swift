@@ -255,12 +255,16 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
     struct localizable {
       /// en translation: An error occurs
       /// 
       /// Locales: en
       static let internal_error_no_code = Rswift.StringResource(key: "internal_error_no_code", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Article selection
+      /// 
+      /// Locales: en
+      static let home_title = Rswift.StringResource(key: "home_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Home
       /// 
       /// Locales: en
@@ -291,6 +295,13 @@ struct R: Rswift.Validatable {
       /// Locales: en
       static func internal_error_no_code(_: Void = ()) -> String {
         return NSLocalizedString("internal_error_no_code", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Article selection
+      /// 
+      /// Locales: en
+      static func home_title(_: Void = ()) -> String {
+        return NSLocalizedString("home_title", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: Home

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Nicolas Mulet. All rights reserved.
 //
 
+import Hero
 import RxCocoa
 import RxSwift
 import UIKit
@@ -28,10 +29,17 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNagivationBar()
         setupView()
         setupButtons()
         setupCards()
         setupListeners()
+    }
+    
+    private func setupNagivationBar() {
+        title = R.string.localizable.home_title()
+        navigationController?.hero.isEnabled = true
+        navigationController?.hero.navigationAnimationType = .fade
     }
     
     private func setupView() {

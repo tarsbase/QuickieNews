@@ -6,6 +6,7 @@
 //  Copyright © 2019 Nicolas Mulet. All rights reserved.
 //
 
+import Hero
 import UIKit
 
 class CategoriesViewController: UIViewController {

@@ -15,6 +15,7 @@
 "tabbar_articles" = "My articles";
 
 // MARK: HomeViewController
+"home_title" = "Article selection";
 "home_no_category" = "You didn't selected any topic";
 
 // MARK: ReadLaterViewController
