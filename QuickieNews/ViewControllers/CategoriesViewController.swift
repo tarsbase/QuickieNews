@@ -60,6 +60,6 @@ extension CategoriesViewController: UITableViewDelegate {
             CategoriesManager.shared.add(selectedCategory: CategoriesManager.shared.currentCategories[indexPath.row])
         }
         
-        tableView.reloadData()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
