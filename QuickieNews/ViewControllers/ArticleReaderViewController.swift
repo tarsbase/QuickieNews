@@ -29,8 +29,13 @@ class ArticleReaderViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupHero()
         setupWebView()
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
+    }
+    
+    private func setupHero() {
+        view.hero.id = HeroId.article + (article?.source.id ?? "")
     }
     
     private func setupWebView() {

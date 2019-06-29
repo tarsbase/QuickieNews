@@ -30,7 +30,7 @@ class Source: NSObject, NSCoding {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        id = aDecoder.decodeObject(forKey: "id") as? String
+        id = aDecoder.decodeObject(forKey: "id") as? String ?? String.randomString(length: 10)
         name = aDecoder.decodeObject(forKey: "name") as? String ?? ""
     }
 }

@@ -12,3 +12,7 @@ struct UserPrefs {
     static let readLaterArticles = "readLaterArticles"
     static let categories = "categories"
 }
+
+struct HeroId {
+    static let article = "Article"
+}

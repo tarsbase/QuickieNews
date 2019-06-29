@@ -28,7 +28,7 @@ class ReadLaterViewController: UIViewController {
     private func setupNagivationBar() {
         title = R.string.localizable.read_later_title()
         navigationController?.hero.isEnabled = true
-        navigationController?.hero.navigationAnimationType = .fade
+        navigationController?.hero.navigationAnimationType = .zoom
     }
     
     private func setupTableView() {

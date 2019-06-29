@@ -34,5 +34,11 @@ class ArticleCell: UITableViewCell {
         }
         
         titleLabel.text = article.title
+        
+        setupHero(with: article.source.id)
+    }
+    
+    func setupHero(with id: String?) {
+        hero.id = HeroId.article + (id ?? "")
     }
 }
