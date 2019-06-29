@@ -16,7 +16,12 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
         setupTableView()
+    }
+    
+    private func setupNavigationBar() {
+        title = R.string.localizable.categories_title()
     }
     
     private func setupTableView() {

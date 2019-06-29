@@ -255,7 +255,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
     struct localizable {
       /// en translation: An error occurs
       /// 
@@ -285,6 +285,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en
       static let article_card_date = Rswift.StringResource(key: "article_card_date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Topic selection
+      /// 
+      /// Locales: en
+      static let categories_title = Rswift.StringResource(key: "categories_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: You didn't selected any topic
       /// 
       /// Locales: en
@@ -337,6 +341,13 @@ struct R: Rswift.Validatable {
       /// Locales: en
       static func article_card_date(_ value1: String) -> String {
         return String(format: NSLocalizedString("article_card_date", bundle: R.hostingBundle, comment: ""), locale: R.applicationLocale, value1)
+      }
+      
+      /// en translation: Topic selection
+      /// 
+      /// Locales: en
+      static func categories_title(_: Void = ()) -> String {
+        return NSLocalizedString("categories_title", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: You didn't selected any topic
@@ -436,14 +447,20 @@ struct _R: Rswift.Validatable {
     struct category: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let categoriesViewController = StoryboardViewControllerResource<CategoriesViewController>(identifier: "CategoriesViewController")
+      let categoryNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "CategoryNavigationController")
       let name = "Category"
       
       func categoriesViewController(_: Void = ()) -> CategoriesViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: categoriesViewController)
       }
       
+      func categoryNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: categoryNavigationController)
+      }
+      
       static func validate() throws {
         if _R.storyboard.category().categoriesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'categoriesViewController' could not be loaded from storyboard 'Category' as 'CategoriesViewController'.") }
+        if _R.storyboard.category().categoryNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'categoryNavigationController' could not be loaded from storyboard 'Category' as 'UIKit.UINavigationController'.") }
       }
       
       fileprivate init() {}
