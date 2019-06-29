@@ -25,7 +25,7 @@ class ArticleCell: UITableViewCell {
         selectionStyle = .none
         
         titleLabel.font = .h4(.bold)
-        titleLabel.textColor = .qnYellow
+        titleLabel.textColor = .qnColorPrimary
     }
     
     func configure(with article: Article) {
