@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var cardsMainView: UIView!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet private weak var buttonContainer: UIView!
     @IBOutlet private weak var nopeButton: ActionButton!
     @IBOutlet private weak var laterButton: ActionButton!
     @IBOutlet private weak var nowButton: ActionButton!
@@ -46,6 +47,14 @@ class HomeViewController: UIViewController {
         noCategoryLabel.font = .h4()
         noCategoryLabel.textColor = .qnGrey
         noCategoryLabel.text = R.string.localizable.home_no_category()
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.qnColorPrimary.cgColor, UIColor.qnYellow.cgColor]
+        
+        view.layer.addSublayer(gradientLayer)
+        view.bringSubviewToFront(cardsMainView)
+        view.bringSubviewToFront(buttonContainer)
     }
     
     private func setupButtons() {

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,7 +51,7 @@
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="oH8-ZP-Omn" firstAttribute="width" secondItem="oH8-ZP-Omn" secondAttribute="height" multiplier="1:1" id="IKB-fS-zKW"/>
                                     <constraint firstAttribute="trailing" secondItem="oH8-ZP-Omn" secondAttribute="trailing" constant="24" id="U9h-RY-HIp"/>
@@ -96,6 +95,7 @@
                     <navigationItem key="navigationItem" id="Q0s-dn-hMZ"/>
                     <connections>
                         <outlet property="activityIndicator" destination="fJf-31-HQp" id="7aD-TQ-Yer"/>
+                        <outlet property="buttonContainer" destination="AX5-s4-Vxe" id="gZQ-vh-E6q"/>
                         <outlet property="cardsMainView" destination="Jjw-79-zm5" id="LEl-ZH-mQ2"/>
                         <outlet property="laterButton" destination="oH8-ZP-Omn" id="1cC-wU-4Er"/>
                         <outlet property="noCategoryLabel" destination="StK-Xs-WRq" id="GVM-ct-pqL"/>

@@ -6,7 +6,9 @@
 //  Copyright © 2019 Nicolas Mulet. All rights reserved.
 //
 
+import CoreSpotlight
 import Foundation
+import MobileCoreServices
 import RxCocoa
 import RxSwift
 
@@ -43,6 +45,21 @@ class ArticlesManager {
                 self.currentArticles.append(contentsOf: articles)
                 self.currentArticles.shuffle()
                 self.rxArticles.onNext(self.currentArticles)
+                
+                var searchableItems = [CSSearchableItem]()
+                
+                articles.forEach({ article in
+                    let searchItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+                    searchItemAttributeSet.title = article.title
+                    searchItemAttributeSet.contentDescription = article.publishedAt.toString()
+                    
+                    let searchableItem = CSSearchableItem(uniqueIdentifier: article.source.id ?? String.randomString(length: 10),
+                                                          domainIdentifier: String(describing: Article.self),
+                                                          attributeSet: searchItemAttributeSet)
+                    searchableItems.append(searchableItem)
+                })
+                
+                CSSearchableIndex.default().indexSearchableItems(searchableItems) { _ in }
             }
             
             completion(self.currentArticles)
