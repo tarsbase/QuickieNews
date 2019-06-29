@@ -206,7 +206,10 @@ extension HomeViewController {
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.removeFromSuperview()
-                self.nextCard()
+                if let article = card.article {
+                    ArticlesManager.shared.addToNopeArticles(article)
+                    self.nextCard()
+                }
             }
         })
     }
@@ -258,8 +261,8 @@ extension HomeViewController {
         articleCardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard)))
         articleCardView.isHidden = true
         
-        self.cardsMainView.addSubview(articleCardView)
-        self.cardsMainView.sendSubviewToBack(articleCardView)
+        cardsMainView.addSubview(articleCardView)
+        cardsMainView.sendSubviewToBack(articleCardView)
         articleCardView.bounds = cardsMainView.frame
         articleCardView.center = cardsMainView.center
         articleCardView.isHidden = false

@@ -23,10 +23,13 @@ class ArticlesManager {
     var readLaterArticles: [Article]
     let rxReadLaterArticles = BehaviorSubject<[Article]>(value: [])
     
+    var nopeArticles: [Article]
+    
     init() {
         articlesService = ArticlesService()
         currentArticles = []
         readLaterArticles = []
+        nopeArticles = []
         getArticlesFromCache()
     }
     
@@ -42,7 +45,12 @@ class ArticlesManager {
     private func getArticles(from category: String, completion: @escaping([Article]) -> Void) {
         articlesService.getArticles(from: category) { (status, error, articles) in
             if status == .success, error == nil {
-                self.currentArticles.append(contentsOf: articles)
+                articles.forEach({ article in
+                    if !self.nopeArticles.contains(where: { $0.source.id == article.source.id }) {
+                        self.currentArticles.append(contentsOf: articles)
+                    }
+                })
+                
                 self.currentArticles.shuffle()
                 self.rxArticles.onNext(self.currentArticles)
                 
@@ -68,9 +76,20 @@ class ArticlesManager {
     
     private func getArticlesFromCache() {
         do {
+            if let nopeArticlesData = UserDefaults.standard.data(forKey: UserPrefs.nopeArticles),
+                let nopeArticles  = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(nopeArticlesData) as? [Article] {
+                self.nopeArticles = nopeArticles
+            }
+            
             if let readLaterArticlesData = UserDefaults.standard.data(forKey: UserPrefs.readLaterArticles),
                 let readLaterArticles = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(readLaterArticlesData) as? [Article] {
                 self.readLaterArticles = readLaterArticles
+                
+                self.readLaterArticles.forEach({ article in
+                    if self.nopeArticles.contains(where: { $0.source.id == article.source.id }) {
+                        self.readLaterArticles.removeAll(where: { $0 == article })
+                    }
+                })
             }
         } catch {
             print("Cannot unarchive readLaterArticles data")
@@ -91,6 +110,13 @@ class ArticlesManager {
         saveReadLaterArticlesToCache()
     }
     
+    func addToNopeArticles(_ article: Article) {
+        nopeArticles.append(article)
+        currentArticles.removeAll(where: { $0.source.id == article.source.id })
+        
+        saveNopeArticlesToCache()
+    }
+    
     private func saveReadLaterArticlesToCache() {
         do {
             let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: readLaterArticles, requiringSecureCoding: false)
@@ -98,6 +124,16 @@ class ArticlesManager {
             UserDefaults.standard.synchronize()
         } catch {
             fatalError("Cannot archive readLaterArticles data")
+        }
+    }
+    
+    private func saveNopeArticlesToCache() {
+        do {
+            let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: nopeArticles, requiringSecureCoding: false)
+            UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.nopeArticles)
+            UserDefaults.standard.synchronize()
+        } catch {
+            fatalError("Cannot archive nopeArticles data")
         }
     }
 }
