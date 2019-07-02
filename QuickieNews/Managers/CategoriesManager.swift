@@ -13,13 +13,19 @@ class CategoriesManager {
     
     static let shared = CategoriesManager()
     
-    var currentCategories: [String]
+    var currentCategories: [Category]
     
-    var selectedCategories: [String]
-    let rxSelectedCategories = BehaviorSubject<[String]>(value: [])
+    var selectedCategories: [Category]
+    let rxSelectedCategories = BehaviorSubject<[Category]>(value: [])
     
     init() {
-        currentCategories = ["Sport", "Business", "Technology", "Politics", "Science", "Health", "Entertainment"]
+        currentCategories = [Category(emoji: "🏀", title: "Sport"),
+                             Category(emoji: "💼", title: "Business"),
+                             Category(emoji: "💻", title: "Technology"),
+                             Category(emoji: "👨‍💼", title: "Politics"),
+                             Category(emoji: "👨‍🔬", title: "Science"),
+                             Category(emoji: "👨‍⚕️", title: "Health"),
+                             Category(emoji: "🎥", title: "Entertainment")]
         selectedCategories = []
         getSelectedCategories()
     }
@@ -31,7 +37,7 @@ class CategoriesManager {
     private func getSelectedCategories() {
         do {
             if let selectedCategoriesData = UserDefaults.standard.data(forKey: UserPrefs.categories),
-                let selectedCategories = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(selectedCategoriesData) as? [String] {
+                let selectedCategories = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(selectedCategoriesData) as? [Category] {
                 self.selectedCategories = selectedCategories
                 notifyRx()
             }
@@ -51,17 +57,17 @@ class CategoriesManager {
         }
     }
     
-    func add(selectedCategory: String) {
+    func add(selectedCategory: Category) {
         selectedCategories.append(selectedCategory)
         saveSelectedCategoriesInCache()
     }
     
-    func remove(selectedCategory: String) {
+    func remove(selectedCategory: Category) {
         selectedCategories.remove(at: selectedCategories.firstIndex(of: selectedCategory) ?? 0)
         saveSelectedCategoriesInCache()
     }
     
-    func isSelected(_ category: String) -> Bool {
-        return selectedCategories.contains(category)
+    func isSelected(_ categoryNumber: Int) -> Bool {
+        return selectedCategories.contains(currentCategories[categoryNumber])
     }
 }

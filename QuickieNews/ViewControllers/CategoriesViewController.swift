@@ -17,6 +17,7 @@ class CategoriesViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
+        setupView()
         setupTableView()
     }
     
@@ -24,7 +25,17 @@ class CategoriesViewController: UIViewController {
         title = R.string.localizable.categories_title()
     }
     
+    private func setupView() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.qnColorPrimary.cgColor, UIColor.qnYellow.cgColor]
+        
+        view.layer.addSublayer(gradientLayer)
+        view.bringSubviewToFront(tableView)
+    }
+    
     private func setupTableView() {
+        tableView.backgroundColor = .clear
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
@@ -43,10 +54,15 @@ extension CategoriesViewController: UITableViewDataSource {
         
         if CategoriesManager.shared.currentCategories.indices.contains(indexPath.row) {
             let category = CategoriesManager.shared.currentCategories[indexPath.row]
-            cell.textLabel?.text = category
+            cell.textLabel?.font = .body1()
+            cell.textLabel?.textColor = .qnDarkColorAccent
+            cell.textLabel?.text = category.toString()
+            
+            cell.backgroundColor = .clear
+            cell.tintColor = .qnOrange
+            
             cell.selectionStyle = .none
-            cell.accessoryType = CategoriesManager.shared.isSelected(CategoriesManager.shared.currentCategories[indexPath.row]) ? .checkmark
-                                                                                                                                : .none
+            cell.accessoryType = CategoriesManager.shared.isSelected(indexPath.row) ? .checkmark : .none
         }
         
         return cell

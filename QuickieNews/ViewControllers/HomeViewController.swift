@@ -6,6 +6,7 @@
 //  Copyright © 2019 Nicolas Mulet. All rights reserved.
 //
 
+import Foundation
 import Hero
 import RxCocoa
 import RxSwift
@@ -25,7 +26,7 @@ class HomeViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    private var currentArticleIndex = 0
+    private var articles = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,8 @@ class HomeViewController: UIViewController {
     }
     
     private func setupView() {
+        cardsMainView.backgroundColor = .clear
+        
         noCategoryLabel.font = .h4()
         noCategoryLabel.textColor = .qnGrey
         noCategoryLabel.text = R.string.localizable.home_no_category()
@@ -55,6 +58,7 @@ class HomeViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         view.bringSubviewToFront(cardsMainView)
         view.bringSubviewToFront(buttonContainer)
+        view.bringSubviewToFront(activityIndicator)
     }
     
     private func setupButtons() {
@@ -80,23 +84,10 @@ class HomeViewController: UIViewController {
             
             ArticlesManager.shared.getAllArticles(from: CategoriesManager.shared.selectedCategories) { articles in
                 self.activityIndicator.stopAnimating()
+                self.articles = articles
                 
-                for (index, article) in articles.enumerated() {
-                    self.currentArticleIndex = index
-                    guard index < 2 else {
-                        // Add the only two first articles in display
-                        return
-                    }
-                    
-                    let articleCardView = ArticleCardView()
-                    articleCardView.configure(with: article)
-                    articleCardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panCard)))
-                    
-                    self.cardsMainView.addSubview(articleCardView)
-                    articleCardView.bounds = self.cardsMainView.frame
-                    articleCardView.center = self.cardsMainView.center
-                    ArticlesManager.shared.currentArticles.remove(at: self.currentArticleIndex)
-                }
+                self.nextCard()
+                self.nextCard()
             }
         }
     }
@@ -251,13 +242,12 @@ extension HomeViewController {
     }
     
     private func nextCard() {
-        currentArticleIndex += 1
-        guard ArticlesManager.shared.currentArticles.indices.contains(currentArticleIndex) else {
+        guard let article = articles.popLast() else {
             return
         }
         
         let articleCardView = ArticleCardView()
-        articleCardView.configure(with: ArticlesManager.shared.currentArticles[currentArticleIndex])
+        articleCardView.configure(with: article)
         articleCardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panCard)))
         articleCardView.isHidden = true
         
@@ -266,7 +256,5 @@ extension HomeViewController {
         articleCardView.bounds = cardsMainView.frame
         articleCardView.center = cardsMainView.center
         articleCardView.isHidden = false
-        
-        ArticlesManager.shared.currentArticles.remove(at: currentArticleIndex)
     }
 }

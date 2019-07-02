@@ -18,7 +18,6 @@ class ArticlesManager {
     let articlesService: ArticlesService
     
     var currentArticles: [Article]
-    let rxArticles = BehaviorSubject<[Article]>(value: [])
     
     var readLaterArticles: [Article]
     let rxReadLaterArticles = BehaviorSubject<[Article]>(value: [])
@@ -33,27 +32,32 @@ class ArticlesManager {
         getArticlesFromCache()
     }
     
-    func getAllArticles(from categories: [String], completion: @escaping([Article]) -> Void) {
+    func getAllArticles(from categories: [Category], completion: @escaping([Article]) -> Void) {
         currentArticles.removeAll()
+        
+        var doneCategories = [String]()
         for category in categories {
-            getArticles(from: category) { articles in
-                completion(self.currentArticles)
+            getArticles(from: category.title) { articles in
+                doneCategories.append(category.title)
+                self.currentArticles.append(contentsOf: articles)
+                if doneCategories.count == categories.count {
+                    self.currentArticles.shuffle()
+                    completion(self.currentArticles)
+                }
             }
         }
     }
     
     private func getArticles(from category: String, completion: @escaping([Article]) -> Void) {
         articlesService.getArticles(from: category) { (status, error, articles) in
+            var results = articles
+            
             if status == .success, error == nil {
-                articles.forEach({ article in
-                    if !self.nopeArticles.contains(where: { $0.source.id == article.source.id }) {
-                        self.currentArticles.append(contentsOf: articles)
-                    }
+                self.nopeArticles.forEach({ article in
+                    results.removeAll(where: { $0.source.id == article.source.id })
                 })
                 
-                self.currentArticles.shuffle()
-                self.rxArticles.onNext(self.currentArticles)
-                
+                // Spotlight
                 var searchableItems = [CSSearchableItem]()
                 
                 articles.forEach({ article in
@@ -70,7 +74,7 @@ class ArticlesManager {
                 CSSearchableIndex.default().indexSearchableItems(searchableItems) { _ in }
             }
             
-            completion(self.currentArticles)
+            completion(results)
         }
     }
     

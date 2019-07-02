@@ -21,6 +21,7 @@ class ReadLaterViewController: UIViewController {
         super.viewDidLoad()
         
         setupNagivationBar()
+        setupView()
         setupTableView()
         setupListeners()
     }
@@ -31,10 +32,20 @@ class ReadLaterViewController: UIViewController {
         navigationController?.hero.navigationAnimationType = .zoom
     }
     
+    private func setupView() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.qnColorPrimary.cgColor, UIColor.qnYellow.cgColor]
+        
+        view.layer.addSublayer(gradientLayer)
+        view.bringSubviewToFront(tableView)
+    }
+    
     private func setupTableView() {
+        tableView.backgroundColor = .clear
         tableView.separatorColor = .clear
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 160.0
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
         

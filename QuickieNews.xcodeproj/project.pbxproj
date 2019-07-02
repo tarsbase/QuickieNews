@@ -12,6 +12,7 @@
 		BB2464D222AAC8E6007C2E53 /* ArticleReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2464D122AAC8E6007C2E53 /* ArticleReaderViewController.swift */; };
 		BB2464D422AACF66007C2E53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2464D322AACF66007C2E53 /* String.swift */; };
 		BB2EB8B422AA71C200550EDF /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EB8B322AA71C200550EDF /* CGFloat.swift */; };
+		BB561E6E22CB646400A5B3F3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB561E6D22CB646400A5B3F3 /* Category.swift */; };
 		BB7757AC22A3DAEF006421DA /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AB22A3DAEF006421DA /* ActionButton.swift */; };
 		BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AD22A3DFCD006421DA /* UIView.swift */; };
 		BB7757B622A3E0FD006421DA /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757B522A3E0FC006421DA /* UIFont.swift */; };
@@ -63,6 +64,7 @@
 		BB2464D122AAC8E6007C2E53 /* ArticleReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReaderViewController.swift; sourceTree = "<group>"; };
 		BB2464D322AACF66007C2E53 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BB2EB8B322AA71C200550EDF /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		BB561E6D22CB646400A5B3F3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BB7757AB22A3DAEF006421DA /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		BB7757AD22A3DFCD006421DA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BB7757B022A3E0A9006421DA /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				BB7800DF22A17A7B0091BF55 /* APIError.swift */,
 				BB7800E922A17FD20091BF55 /* Article.swift */,
+				BB561E6D22CB646400A5B3F3 /* Category.swift */,
 				BB7800EB22A17FF80091BF55 /* Source.swift */,
 			);
 			path = Models;
@@ -522,6 +525,7 @@
 				BB7757C922A416CD006421DA /* CGPoint.swift in Sources */,
 				BB2464D422AACF66007C2E53 /* String.swift in Sources */,
 				BB7757BF22A3E854006421DA /* NibView.swift in Sources */,
+				BB561E6E22CB646400A5B3F3 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
