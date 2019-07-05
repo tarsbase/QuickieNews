@@ -3,12 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		42E8C27F94A34F9B77FCDD43 /* Pods_QuickieNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A828E91A4CC623D5ABD9A3 /* Pods_QuickieNews.framework */; };
 		BB1B825A22A2B31F00DC5F2E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B825922A2B31F00DC5F2E /* UIColor.swift */; };
+		BB2464D222AAC8E6007C2E53 /* ArticleReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2464D122AAC8E6007C2E53 /* ArticleReaderViewController.swift */; };
+		BB2464D422AACF66007C2E53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2464D322AACF66007C2E53 /* String.swift */; };
+		BB2EB8B422AA71C200550EDF /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EB8B322AA71C200550EDF /* CGFloat.swift */; };
+		BB561E6E22CB646400A5B3F3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB561E6D22CB646400A5B3F3 /* Category.swift */; };
+		BB7757AC22A3DAEF006421DA /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AB22A3DAEF006421DA /* ActionButton.swift */; };
+		BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757AD22A3DFCD006421DA /* UIView.swift */; };
+		BB7757B622A3E0FD006421DA /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757B522A3E0FC006421DA /* UIFont.swift */; };
+		BB7757B722A3E130006421DA /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B222A3E0A9006421DA /* Montserrat-Bold.otf */; };
+		BB7757B822A3E132006421DA /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B022A3E0A9006421DA /* Montserrat-ExtraLight.otf */; };
+		BB7757B922A3E141006421DA /* Montserrat-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B322A3E0A9006421DA /* Montserrat-ExtraLightItalic.otf */; };
+		BB7757BA22A3E143006421DA /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B122A3E0A9006421DA /* Montserrat-Medium.otf */; };
+		BB7757BB22A3E145006421DA /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BB7757B422A3E0A9006421DA /* Montserrat-Regular.otf */; };
+		BB7757BD22A3E82B006421DA /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757BC22A3E82B006421DA /* ArticleCardView.swift */; };
+		BB7757BF22A3E854006421DA /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757BE22A3E854006421DA /* NibView.swift */; };
+		BB7757C122A3EA28006421DA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C022A3EA28006421DA /* Date.swift */; };
+		BB7757C322A3EAF3006421DA /* ArticleCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7757C222A3EAF3006421DA /* ArticleCardView.xib */; };
+		BB7757C522A3ECF4006421DA /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */; };
+		BB7757C722A3EDE2006421DA /* CategoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C622A3EDE2006421DA /* CategoriesManager.swift */; };
+		BB7757C922A416CD006421DA /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757C822A416CD006421DA /* CGPoint.swift */; };
+		BB7757CB22A4758B006421DA /* ReadLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757CA22A4758B006421DA /* ReadLaterViewController.swift */; };
+		BB7757CD22A476A7006421DA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757CC22A476A7006421DA /* UITableView.swift */; };
+		BB7757CF22A4772F006421DA /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757CE22A4772F006421DA /* ArticleCell.swift */; };
+		BB7757D122A47743006421DA /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB7757D022A47743006421DA /* ArticleCell.xib */; };
+		BB7757D322A5092C006421DA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7757D222A5092C006421DA /* Utils.swift */; };
 		BB7800D422A1766E0091BF55 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7800D322A1766D0091BF55 /* R.generated.swift */; };
 		BB7800DA22A177FE0091BF55 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB7800DC22A177FE0091BF55 /* Localizable.strings */; };
 		BB7800DE22A17A200091BF55 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7800DD22A17A200091BF55 /* APIService.swift */; };
@@ -37,6 +61,30 @@
 		15B094A94056EBF5CAA095ED /* Pods-QuickieNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickieNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickieNews/Pods-QuickieNews.debug.xcconfig"; sourceTree = "<group>"; };
 		35A828E91A4CC623D5ABD9A3 /* Pods_QuickieNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickieNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1B825922A2B31F00DC5F2E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BB2464D122AAC8E6007C2E53 /* ArticleReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleReaderViewController.swift; sourceTree = "<group>"; };
+		BB2464D322AACF66007C2E53 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BB2EB8B322AA71C200550EDF /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		BB561E6D22CB646400A5B3F3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BB7757AB22A3DAEF006421DA /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		BB7757AD22A3DFCD006421DA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BB7757B022A3E0A9006421DA /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
+		BB7757B122A3E0A9006421DA /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		BB7757B222A3E0A9006421DA /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		BB7757B322A3E0A9006421DA /* Montserrat-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		BB7757B422A3E0A9006421DA /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		BB7757B522A3E0FC006421DA /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		BB7757BC22A3E82B006421DA /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
+		BB7757BE22A3E854006421DA /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		BB7757C022A3EA28006421DA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		BB7757C222A3EAF3006421DA /* ArticleCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCardView.xib; sourceTree = "<group>"; };
+		BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		BB7757C622A3EDE2006421DA /* CategoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesManager.swift; sourceTree = "<group>"; };
+		BB7757C822A416CD006421DA /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		BB7757CA22A4758B006421DA /* ReadLaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadLaterViewController.swift; sourceTree = "<group>"; };
+		BB7757CC22A476A7006421DA /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		BB7757CE22A4772F006421DA /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		BB7757D022A47743006421DA /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		BB7757D222A5092C006421DA /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BB7800D322A1766D0091BF55 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BB7800DB22A177FE0091BF55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB7800DD22A17A200091BF55 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -93,10 +141,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB1B825B22A3D99900DC5F2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB7757A922A3DABB006421DA /* Commons */,
+				BB7757AA22A3DAC3006421DA /* TableViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB7757A922A3DABB006421DA /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				BB7757AB22A3DAEF006421DA /* ActionButton.swift */,
+				BB7757BC22A3E82B006421DA /* ArticleCardView.swift */,
+				BB7757C222A3EAF3006421DA /* ArticleCardView.xib */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		BB7757AA22A3DAC3006421DA /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				BB7757CE22A4772F006421DA /* ArticleCell.swift */,
+				BB7757D022A47743006421DA /* ArticleCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		BB7757AF22A3E08F006421DA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BB7757B222A3E0A9006421DA /* Montserrat-Bold.otf */,
+				BB7757B022A3E0A9006421DA /* Montserrat-ExtraLight.otf */,
+				BB7757B322A3E0A9006421DA /* Montserrat-ExtraLightItalic.otf */,
+				BB7757B122A3E0A9006421DA /* Montserrat-Medium.otf */,
+				BB7757B422A3E0A9006421DA /* Montserrat-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		BB7800CD22A173D90091BF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB2464D122AAC8E6007C2E53 /* ArticleReaderViewController.swift */,
+				BB7757C422A3ECF4006421DA /* CategoriesViewController.swift */,
 				BB7800F322A192900091BF55 /* HomeViewController.swift */,
+				BB7757CA22A4758B006421DA /* ReadLaterViewController.swift */,
 				BB7800F522A1934C0091BF55 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
@@ -107,6 +198,7 @@
 			children = (
 				BB7800DF22A17A7B0091BF55 /* APIError.swift */,
 				BB7800E922A17FD20091BF55 /* Article.swift */,
+				BB561E6D22CB646400A5B3F3 /* Category.swift */,
 				BB7800EB22A17FF80091BF55 /* Source.swift */,
 			);
 			path = Models;
@@ -116,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7800F122A186460091BF55 /* ArticlesManager.swift */,
+				BB7757C622A3EDE2006421DA /* CategoriesManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -144,6 +237,7 @@
 		BB7800D622A176860091BF55 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB7757AF22A3E08F006421DA /* Fonts */,
 				BB8C994E22A16F1700801D54 /* Assets.xcassets */,
 				BB7800DC22A177FE0091BF55 /* Localizable.strings */,
 			);
@@ -153,8 +247,16 @@
 		BB7800D722A176A60091BF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BB2EB8B322AA71C200550EDF /* CGFloat.swift */,
+				BB7757C822A416CD006421DA /* CGPoint.swift */,
+				BB7757C022A3EA28006421DA /* Date.swift */,
 				BB7800EF22A182A20091BF55 /* JSON.swift */,
+				BB7757BE22A3E854006421DA /* NibView.swift */,
+				BB2464D322AACF66007C2E53 /* String.swift */,
 				BB1B825922A2B31F00DC5F2E /* UIColor.swift */,
+				BB7757B522A3E0FC006421DA /* UIFont.swift */,
+				BB7757CC22A476A7006421DA /* UITableView.swift */,
+				BB7757AD22A3DFCD006421DA /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7800E222A17C4A0091BF55 /* Routes.swift */,
+				BB7757D222A5092C006421DA /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -199,17 +302,18 @@
 			isa = PBXGroup;
 			children = (
 				BB8C995322A16F1700801D54 /* Info.plist */,
-				BB8C994B22A16F1400801D54 /* QuickieNews.xcdatamodeld */,
 				BB8C994422A16F1400801D54 /* AppDelegate.swift */,
 				BB7800D722A176A60091BF55 /* Extensions */,
 				BB7800CF22A173E80091BF55 /* Managers */,
 				BB7800CE22A173E30091BF55 /* Models */,
 				BB7800E422A17C730091BF55 /* Protocols */,
+				BB8C994B22A16F1400801D54 /* QuickieNews.xcdatamodeld */,
 				BB7800D622A176860091BF55 /* Resources */,
 				BB7800D022A173ED0091BF55 /* Services */,
 				BB7800D522A1767F0091BF55 /* Storyboards */,
 				BB7800E122A17C3A0091BF55 /* Utils */,
 				BB7800CD22A173D90091BF55 /* ViewControllers */,
+				BB1B825B22A3D99900DC5F2E /* Views */,
 			);
 			path = QuickieNews;
 			sourceTree = "<group>";
@@ -276,13 +380,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7757BA22A3E143006421DA /* Montserrat-Medium.otf in Resources */,
 				BB7800FA22A277530091BF55 /* Category.storyboard in Resources */,
 				BB8C995222A16F1700801D54 /* LaunchScreen.storyboard in Resources */,
+				BB7757B922A3E141006421DA /* Montserrat-ExtraLightItalic.otf in Resources */,
+				BB7757D122A47743006421DA /* ArticleCell.xib in Resources */,
 				BB7800FC22A2775E0091BF55 /* Articles.storyboard in Resources */,
 				BB7800F822A277450091BF55 /* Home.storyboard in Resources */,
 				BB7800DA22A177FE0091BF55 /* Localizable.strings in Resources */,
 				BB8C994F22A16F1700801D54 /* Assets.xcassets in Resources */,
+				BB7757C322A3EAF3006421DA /* ArticleCardView.xib in Resources */,
 				BB8C994A22A16F1400801D54 /* Main.storyboard in Resources */,
+				BB7757B822A3E132006421DA /* Montserrat-ExtraLight.otf in Resources */,
+				BB7757B722A3E130006421DA /* Montserrat-Bold.otf in Resources */,
+				BB7757BB22A3E145006421DA /* Montserrat-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,31 +423,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-QuickieNews/Pods-QuickieNews-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickieNews/Pods-QuickieNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickieNews/Pods-QuickieNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickieNews/Pods-QuickieNews-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuickieNews/Pods-QuickieNews-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB7800D122A1755A0091BF55 /* R.swift */ = {
@@ -382,22 +478,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2464D222AAC8E6007C2E53 /* ArticleReaderViewController.swift in Sources */,
+				BB2EB8B422AA71C200550EDF /* CGFloat.swift in Sources */,
 				BB7800EE22A180ED0091BF55 /* Reusable.swift in Sources */,
 				BB7800F022A182A20091BF55 /* JSON.swift in Sources */,
 				BB7800E322A17C4A0091BF55 /* Routes.swift in Sources */,
 				BB7800F622A1934C0091BF55 /* TabBarController.swift in Sources */,
+				BB7757CF22A4772F006421DA /* ArticleCell.swift in Sources */,
 				BB7800DE22A17A200091BF55 /* APIService.swift in Sources */,
+				BB7757CD22A476A7006421DA /* UITableView.swift in Sources */,
 				BB1B825A22A2B31F00DC5F2E /* UIColor.swift in Sources */,
+				BB7757D322A5092C006421DA /* Utils.swift in Sources */,
+				BB7757AE22A3DFCD006421DA /* UIView.swift in Sources */,
+				BB7757CB22A4758B006421DA /* ReadLaterViewController.swift in Sources */,
 				BB7800E822A17EFC0091BF55 /* ArticlesService.swift in Sources */,
+				BB7757AC22A3DAEF006421DA /* ActionButton.swift in Sources */,
 				BB7800F422A192900091BF55 /* HomeViewController.swift in Sources */,
+				BB7757B622A3E0FD006421DA /* UIFont.swift in Sources */,
+				BB7757C722A3EDE2006421DA /* CategoriesManager.swift in Sources */,
 				BB7800F222A186460091BF55 /* ArticlesManager.swift in Sources */,
 				BB7800EC22A17FF80091BF55 /* Source.swift in Sources */,
 				BB8C994D22A16F1400801D54 /* QuickieNews.xcdatamodeld in Sources */,
 				BB8C994522A16F1400801D54 /* AppDelegate.swift in Sources */,
 				BB7800D422A1766E0091BF55 /* R.generated.swift in Sources */,
 				BB7800E622A17C810091BF55 /* RoutePath.swift in Sources */,
+				BB7757BD22A3E82B006421DA /* ArticleCardView.swift in Sources */,
 				BB7800EA22A17FD20091BF55 /* Article.swift in Sources */,
+				BB7757C122A3EA28006421DA /* Date.swift in Sources */,
 				BB7800E022A17A7B0091BF55 /* APIError.swift in Sources */,
+				BB7757C522A3ECF4006421DA /* CategoriesViewController.swift in Sources */,
+				BB7757C922A416CD006421DA /* CGPoint.swift in Sources */,
+				BB2464D422AACF66007C2E53 /* String.swift in Sources */,
+				BB7757BF22A3E854006421DA /* NibView.swift in Sources */,
+				BB561E6E22CB646400A5B3F3 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +595,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -537,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -8,7 +8,7 @@
 
 import SwiftyJSON
 
-struct Source {
+class Source: NSObject, NSCoding {
     let id: String?
     let name: String
     
@@ -17,10 +17,20 @@ struct Source {
         self.name = name
     }
     
-    init?(json: JSON) {
+    convenience init?(json: JSON) {
         let id = json["id"].string
         let name = json["name"].stringValue
         
         self.init(id: id, name: name)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(name, forKey: "name")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        id = aDecoder.decodeObject(forKey: "id") as? String ?? String.randomString(length: 10)
+        name = aDecoder.decodeObject(forKey: "name") as? String ?? ""
     }
 }

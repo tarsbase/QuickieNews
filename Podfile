@@ -23,11 +23,6 @@ end
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
-            if config.name == 'Debug' || config.name == 'Mock'
-                config.build_settings['OTHER_SWIFT_FLAGS'] = ['$(inherited)', '-Onone']
-                config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'
-            end
-            
             config.build_settings['SWIFT_VERSION'] = '4.0'
         end
     end
