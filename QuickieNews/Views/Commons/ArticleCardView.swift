@@ -47,17 +47,16 @@ class ArticleCardView: NibView {
         laterImageView.tintColor = .qnGreen
         laterImageView.alpha = 0.0
         
-        imageView.isUserInteractionEnabled = true
         imageView.addRadius()
         
         titleLabel.font = .h4(.bold)
-        titleLabel.textColor = .qnColorPrimary
+        titleLabel.textColor = .qnOrange
         titleLabel.backgroundColor = .qnTransparant
         titleLabel.layer.masksToBounds = true
         titleLabel.layer.cornerRadius = 6.0
         
         dateLabel.font = .body1()
-        dateLabel.textColor = .qnColorPrimary
+        dateLabel.textColor = .qnOrange
         dateLabel.backgroundColor = .qnTransparant
         dateLabel.layer.masksToBounds = true
         dateLabel.layer.cornerRadius = 6.0

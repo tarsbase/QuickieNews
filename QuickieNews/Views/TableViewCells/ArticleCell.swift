@@ -25,7 +25,10 @@ class ArticleCell: UITableViewCell {
         selectionStyle = .none
         
         titleLabel.font = .h4(.bold)
-        titleLabel.textColor = .qnColorPrimary
+        titleLabel.textColor = .qnOrange
+        titleLabel.backgroundColor = .qnTransparant
+        titleLabel.layer.masksToBounds = true
+        titleLabel.layer.cornerRadius = 6.0
     }
     
     func configure(with article: Article) {
