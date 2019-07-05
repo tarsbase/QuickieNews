@@ -20,6 +20,7 @@ class ArticleCardView: NibView {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var categoryLabel: UILabel!
     
     var article: Article?
     
@@ -73,5 +74,6 @@ class ArticleCardView: NibView {
         
         titleLabel.text = article.title
         dateLabel.text = R.string.localizable.article_card_date(article.publishedAt.toString())
+        categoryLabel.text = article.category?.emoji
     }
 }

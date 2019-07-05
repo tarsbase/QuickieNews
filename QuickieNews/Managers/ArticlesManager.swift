@@ -37,7 +37,7 @@ class ArticlesManager {
         
         var doneCategories = [String]()
         for category in categories {
-            getArticles(from: category.title) { articles in
+            getArticles(from: category) { articles in
                 doneCategories.append(category.title)
                 self.currentArticles.append(contentsOf: articles)
                 if doneCategories.count == categories.count {
@@ -48,8 +48,8 @@ class ArticlesManager {
         }
     }
     
-    private func getArticles(from category: String, completion: @escaping([Article]) -> Void) {
-        articlesService.getArticles(from: category) { (status, error, articles) in
+    private func getArticles(from category: Category, completion: @escaping([Article]) -> Void) {
+        articlesService.getArticles(from: category.title) { (status, error, articles) in
             var results = articles
             
             if status == .success, error == nil {
@@ -61,6 +61,7 @@ class ArticlesManager {
                 var searchableItems = [CSSearchableItem]()
                 
                 articles.forEach({ article in
+                    article.category = category
                     let searchItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
                     searchItemAttributeSet.title = article.title
                     searchItemAttributeSet.contentDescription = article.publishedAt.toString()

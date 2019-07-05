@@ -17,6 +17,7 @@ class Article: NSObject, NSCoding {
     let urlToImage: String
     let publishedAt: Date
     let content: String
+    var category: Category?
     
     init(source: Source, author: String, title: String, description: String,
          url: String, urlToImage: String, publishedAt: Date, content: String) {

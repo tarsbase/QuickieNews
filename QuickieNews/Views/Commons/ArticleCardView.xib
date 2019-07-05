@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticleCardView" customModule="QuickieNews" customModuleProvider="target">
             <connections>
+                <outlet property="categoryLabel" destination="bQo-g9-1Wl" id="XAh-c3-C02"/>
                 <outlet property="containerView" destination="Zbt-sD-xsS" id="Pb8-HA-g5Z"/>
                 <outlet property="dateLabel" destination="Swd-gJ-uEs" id="Ax3-Z1-Lql"/>
                 <outlet property="imageView" destination="1YO-9C-er0" id="L6k-Jq-apV"/>
@@ -81,6 +82,12 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQo-g9-1Wl">
+                            <rect key="frame" x="8" y="8" width="48" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -91,8 +98,10 @@
                         <constraint firstAttribute="bottom" secondItem="Swd-gJ-uEs" secondAttribute="bottom" constant="8" id="CsW-j1-6Zl"/>
                         <constraint firstItem="Swd-gJ-uEs" firstAttribute="top" secondItem="OZv-nz-kkP" secondAttribute="bottom" constant="16" id="DM2-Pm-eMV"/>
                         <constraint firstItem="cti-oh-1pd" firstAttribute="leading" secondItem="Zbt-sD-xsS" secondAttribute="leading" id="LPw-Hz-eUD"/>
+                        <constraint firstItem="bQo-g9-1Wl" firstAttribute="leading" secondItem="Zbt-sD-xsS" secondAttribute="leading" constant="8" id="Pa2-Ew-VhK"/>
                         <constraint firstItem="cti-oh-1pd" firstAttribute="top" secondItem="Zbt-sD-xsS" secondAttribute="top" id="RmM-CH-CAL"/>
                         <constraint firstAttribute="bottom" secondItem="cti-oh-1pd" secondAttribute="bottom" id="TQD-zs-oO3"/>
+                        <constraint firstItem="bQo-g9-1Wl" firstAttribute="top" secondItem="Zbt-sD-xsS" secondAttribute="top" constant="8" id="a2k-41-6ku"/>
                         <constraint firstItem="Swd-gJ-uEs" firstAttribute="leading" secondItem="Zbt-sD-xsS" secondAttribute="leading" constant="8" id="cah-2t-UJM"/>
                         <constraint firstAttribute="trailing" secondItem="OZv-nz-kkP" secondAttribute="trailing" constant="8" id="f0N-ut-vYB"/>
                         <constraint firstAttribute="trailing" secondItem="1YO-9C-er0" secondAttribute="trailing" id="sOz-co-avU"/>
