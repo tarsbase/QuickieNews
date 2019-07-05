@@ -10,12 +10,14 @@ import Foundation
 
 extension Date {
     func toString(style: DateFormatter.Style = .long) -> String {
-        DateForma.dateFormatter.dateStyle = style
+        DateFormatter.shared.dateStyle = style
         
-        return DateForma.dateFormatter.string(from: self)
+        return DateFormatter.shared.string(from: self)
     }
 }
 
-class DateForma {
-    static let dateFormatter = DateFormatter()
+extension DateFormatter {
+    static var shared: DateFormatter = {
+        return DateFormatter()
+    }()
 }
