@@ -15,7 +15,7 @@ class ReadLaterViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,8 @@ class ReadLaterViewController: UIViewController {
         title = R.string.localizable.read_later_title()
         navigationController?.hero.isEnabled = true
         navigationController?.hero.navigationAnimationType = .zoom
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: #selector(orderingButtonTapped))
+        navigationItem.rightBarButtonItem?.image = R.image.sort()
     }
     
     private func setupView() {
@@ -98,5 +100,13 @@ extension ReadLaterViewController: UITableViewDelegate {
                 navigationController?.pushViewController(articleReaderVC, animated: true)
             }
         }
+    }
+}
+
+// MARK: - Action handlers
+
+extension ReadLaterViewController {
+    @objc private func orderingButtonTapped(_ sender: Any) {
+        ArticlesManager.shared.reorderLaterArticles()
     }
 }

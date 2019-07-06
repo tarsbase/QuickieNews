@@ -22,6 +22,8 @@ class ArticlesManager {
     var readLaterArticles: [Article]
     let rxReadLaterArticles = BehaviorSubject<[Article]>(value: [])
     
+    private var orderedBy: ArticleOrder = .timeIncreasing
+    
     var nopeArticles: [Article]
     
     init() {
@@ -140,5 +142,31 @@ class ArticlesManager {
         } catch {
             fatalError("Cannot archive nopeArticles data")
         }
+    }
+}
+
+// MARK: - Later Articles
+
+extension ArticlesManager {
+    private enum ArticleOrder {
+        case timeIncreasing
+        case timeDecreasing
+        case category
+    }
+    
+    func reorderLaterArticles() {
+        switch orderedBy {
+        case .timeIncreasing:
+            readLaterArticles.sort(by: { $0.publishedAt > $1.publishedAt })
+            orderedBy = .timeDecreasing
+        case .timeDecreasing:
+            readLaterArticles.sort(by: { ($0.category?.title ?? "") > ($1.category?.title ?? "") })
+            orderedBy = .category
+        case .category:
+            readLaterArticles.sort(by: { $0.publishedAt < $1.publishedAt })
+            orderedBy = .timeIncreasing
+        }
+        
+        rxReadLaterArticles.onNext(readLaterArticles)
     }
 }

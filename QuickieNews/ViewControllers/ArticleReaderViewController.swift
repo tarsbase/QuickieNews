@@ -12,9 +12,9 @@ import WebKit
 
 class ArticleReaderViewController: UIViewController, WKNavigationDelegate {
     
-    var webView: WKWebView!
+    private var webView: WKWebView!
     
-    var article: Article?
+    private var article: Article?
     
     func initialize(with article: Article) {
         self.article = article

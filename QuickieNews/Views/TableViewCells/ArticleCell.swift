@@ -21,6 +21,10 @@ class ArticleCell: UITableViewCell {
         setupView()
     }
     
+    override func prepareForReuse() {
+        articleImageView.image = nil
+    }
+    
     private func setupView() {
         selectionStyle = .none
         
