@@ -85,16 +85,6 @@ class APIService {
             
             if response.result.isFailure {
                 error = self.mapAPIError(response.data)
-                
-                // Display error banner
-//                if let apiError = error {
-//                    DispatchQueue.main.async {
-//                        let bannerAlert = BannerAlert(title: apiError.formattedMessage)
-//                        bannerAlert.style = .apiError
-//                        AudioServicesPlaySystemSound(1521)
-//                        BannerAlertManager.shared.queue(bannerAlert)
-//                    }
-//                }
             }
             
             completion(response.result.value, error)
