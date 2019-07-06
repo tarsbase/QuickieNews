@@ -81,8 +81,7 @@ extension ReadLaterViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete,
-            ArticlesManager.shared.readLaterArticles.indices.contains(indexPath.row) {
+        if editingStyle == .delete, ArticlesManager.shared.readLaterArticles.indices.contains(indexPath.row) {
             ArticlesManager.shared.readLaterArticles.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }

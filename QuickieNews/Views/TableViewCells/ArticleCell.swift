@@ -40,7 +40,7 @@ class ArticleCell: UITableViewCell {
             articleImageView.sd_setImage(with: urlToImage, placeholderImage: R.image.placeholder())
         }
         
-        titleLabel.text = article.title
+        titleLabel.text = "\(article.title) \(article.category?.emoji ?? "")"
         
         setupHero(with: article.source.id)
     }
