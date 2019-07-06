@@ -84,6 +84,7 @@ extension ReadLaterViewController: UITableViewDataSource {
         if editingStyle == .delete, ArticlesManager.shared.readLaterArticles.indices.contains(indexPath.row) {
             ArticlesManager.shared.readLaterArticles.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            ArticlesManager.shared.saveReadLaterArticlesToCache()
         }
     }
 }

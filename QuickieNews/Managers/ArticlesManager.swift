@@ -124,7 +124,7 @@ class ArticlesManager {
         saveNopeArticlesToCache()
     }
     
-    private func saveReadLaterArticlesToCache() {
+    func saveReadLaterArticlesToCache() {
         do {
             let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: readLaterArticles, requiringSecureCoding: false)
             UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.readLaterArticles)
