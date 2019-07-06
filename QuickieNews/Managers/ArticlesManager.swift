@@ -22,7 +22,7 @@ class ArticlesManager {
     var readLaterArticles: [Article]
     let rxReadLaterArticles = BehaviorSubject<[Article]>(value: [])
     
-    private var orderedBy: ArticleOrder = .timeIncreasing
+    var orderedBy: ArticleOrder = .timeIncreasing
     
     var nopeArticles: [Article]
     
@@ -124,7 +124,7 @@ class ArticlesManager {
         saveNopeArticlesToCache()
     }
     
-    private func saveReadLaterArticlesToCache() {
+    func saveReadLaterArticlesToCache() {
         do {
             let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: readLaterArticles, requiringSecureCoding: false)
             UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.readLaterArticles)
@@ -148,10 +148,21 @@ class ArticlesManager {
 // MARK: - Later Articles
 
 extension ArticlesManager {
-    private enum ArticleOrder {
+    enum ArticleOrder {
         case timeIncreasing
         case timeDecreasing
         case category
+        
+        func toString() -> String {
+            switch self {
+            case .timeIncreasing:
+                return R.string.localizable.read_later_sort_date_dec()
+            case .timeDecreasing:
+                return R.string.localizable.read_later_sort_category()
+            case .category:
+                return R.string.localizable.read_later_sort_date_inc()
+            }
+        }
     }
     
     func reorderLaterArticles() {

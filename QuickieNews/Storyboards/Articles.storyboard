@@ -31,7 +31,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ObA-co-ZJi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KQh-V7-WQ9"/>
+                    <navigationItem key="navigationItem" id="KQh-V7-WQ9">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="XIO-sO-vgI">
+                            <connections>
+                                <action selector="orderingButtonTapped:" destination="mNJ-Ym-1lL" id="YmK-xE-fGe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="OSu-CL-QsE" id="vnw-6w-xI1"/>
                     </connections>

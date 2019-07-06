@@ -34,6 +34,14 @@ class ArticleReaderViewController: UIViewController, WKNavigationDelegate {
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let article = article else { return }
+        
+        ArticlesManager.shared.removeFromReadLaterArticles(article)
+    }
+    
     private func setupHero() {
         view.hero.id = HeroId.article + (article?.source.id ?? "")
     }

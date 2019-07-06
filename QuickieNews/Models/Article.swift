@@ -56,6 +56,7 @@ class Article: NSObject, NSCoding {
         aCoder.encode(urlToImage, forKey: "urlToImage")
         aCoder.encode(publishedAt, forKey: "publishedAt")
         aCoder.encode(content, forKey: "content")
+        aCoder.encode(category, forKey: "category")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,5 +68,6 @@ class Article: NSObject, NSCoding {
         urlToImage = aDecoder.decodeObject(forKey: "urlToImage") as? String ?? ""
         publishedAt = aDecoder.decodeObject(forKey: "publishedAt") as? Date ?? Date()
         content = aDecoder.decodeObject(forKey: "content") as? String ?? ""
+        category = aDecoder.decodeObject(forKey: "category") as? Category
     }
 }
