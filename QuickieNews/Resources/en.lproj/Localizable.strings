@@ -23,6 +23,9 @@
 
 // MARK: ReadLaterViewController
 "read_later_title" = "My articles to read";
+"read_later_sort_date_inc" = "Order by date ⬆️";
+"read_later_sort_date_dec" = "Order by date ⬇️";
+"read_later_sort_category" = "Order by category";
 
 // MARK: ArticleCardView
 "article_card_date" = "Published on the %@";

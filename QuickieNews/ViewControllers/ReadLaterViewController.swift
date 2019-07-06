@@ -30,8 +30,7 @@ class ReadLaterViewController: UIViewController {
         title = R.string.localizable.read_later_title()
         navigationController?.hero.isEnabled = true
         navigationController?.hero.navigationAnimationType = .zoom
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: #selector(orderingButtonTapped))
-        navigationItem.rightBarButtonItem?.image = R.image.sort()
+        navigationItem.rightBarButtonItem?.title = ArticlesManager.shared.orderedBy.toString()
     }
     
     private func setupView() {
@@ -106,7 +105,8 @@ extension ReadLaterViewController: UITableViewDelegate {
 // MARK: - Action handlers
 
 extension ReadLaterViewController {
-    @objc private func orderingButtonTapped(_ sender: Any) {
+    @IBAction private func orderingButtonTapped(_ sender: Any) {
         ArticlesManager.shared.reorderLaterArticles()
+        navigationItem.rightBarButtonItem?.title = ArticlesManager.shared.orderedBy.toString()
     }
 }
