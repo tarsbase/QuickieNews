@@ -117,7 +117,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 10 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
     /// Image `later`.
     static let later = Rswift.ImageResource(bundle: R.hostingBundle, name: "later")
@@ -127,10 +127,6 @@ struct R: Rswift.Validatable {
     static let now = Rswift.ImageResource(bundle: R.hostingBundle, name: "now")
     /// Image `placeholder`.
     static let placeholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeholder")
-    /// Image `sortDecreasing`.
-    static let sortDecreasing = Rswift.ImageResource(bundle: R.hostingBundle, name: "sortDecreasing")
-    /// Image `sort`.
-    static let sort = Rswift.ImageResource(bundle: R.hostingBundle, name: "sort")
     /// Image `tabbar_articles_inactive`.
     static let tabbar_articles_inactive = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_articles_inactive")
     /// Image `tabbar_category_inactive`.
@@ -158,16 +154,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "placeholder", bundle: ..., traitCollection: ...)`
     static func placeholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.placeholder, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "sort", bundle: ..., traitCollection: ...)`
-    static func sort(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.sort, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "sortDecreasing", bundle: ..., traitCollection: ...)`
-    static func sortDecreasing(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.sortDecreasing, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "tabbar_articles_inactive", bundle: ..., traitCollection: ...)`

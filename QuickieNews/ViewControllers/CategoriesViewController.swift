@@ -28,7 +28,7 @@ class CategoriesViewController: UIViewController {
     private func setupView() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
-        gradientLayer.colors = [UIColor.qnColorPrimary.cgColor, UIColor.qnYellow.cgColor]
+        gradientLayer.colors = [UIColor.qnColorPrimary.cgColor, UIColor.qnOrange.cgColor]
         
         view.layer.addSublayer(gradientLayer)
         view.bringSubviewToFront(tableView)
