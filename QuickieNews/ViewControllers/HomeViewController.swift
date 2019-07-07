@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
         cardsMainView.backgroundColor = .clear
         
         noCategoryLabel.font = .h4()
-        noCategoryLabel.textColor = .qnGrey
+        noCategoryLabel.textColor = .qnDarkColorAccent
         noCategoryLabel.text = R.string.localizable.home_no_category()
         
         let gradientLayer = CAGradientLayer()
@@ -56,6 +56,7 @@ class HomeViewController: UIViewController {
         gradientLayer.colors = [UIColor.qnColorPrimary.cgColor, UIColor.qnOrange.cgColor]
         
         view.layer.addSublayer(gradientLayer)
+        view.bringSubviewToFront(noCategoryLabel)
         view.bringSubviewToFront(cardsMainView)
         view.bringSubviewToFront(buttonContainer)
         view.bringSubviewToFront(activityIndicator)
@@ -145,6 +146,7 @@ extension HomeViewController {
             let cardPlacement = CardPlacement(deltaToCenter: deltaToCenter)
             
             card.transform = CGAffineTransform(rotationAngle: .rotationAngle * (deltaToCenter.x / .rotationAngleLimit))
+            
             if abs(deltaToCenter.y) > (UIScreen.main.bounds.height / 10.0) {
                 card.nowImageView.alpha = 3.0 * abs(deltaToCenter.y) / cardsMainView.center.y
                 card.laterImageView.alpha = 0.0
@@ -232,14 +234,12 @@ extension HomeViewController {
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.removeFromSuperview()
-                if let article = card.article {
-                    self.articles.removeAll(where: { $0.title == article.title })
-                }
                 
                 self.nextCard()
                 
                 if let article = card.article, let articleReaderVC = R.storyboard.articles.articleReaderViewController() {
                     articleReaderVC.initialize(with: article)
+                    self.articles.removeAll(where: { $0.title == article.title })
                     
                     self.navigationController?.pushViewController(articleReaderVC, animated: true)
                 }
