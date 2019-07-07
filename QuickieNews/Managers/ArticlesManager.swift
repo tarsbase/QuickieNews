@@ -15,16 +15,16 @@ import RxSwift
 class ArticlesManager {
     static let shared = ArticlesManager()
     
-    let articlesService: ArticlesService
+    private let articlesService: ArticlesService
     
-    var currentArticles: [Article]
+    private var currentArticles: [Article]
     
     var readLaterArticles: [Article]
     let rxReadLaterArticles = BehaviorSubject<[Article]>(value: [])
     
     var orderedBy: ArticleOrder = .timeIncreasing
     
-    var nopeArticles: [Article]
+    private var nopeArticles: [Article]
     
     init() {
         articlesService = ArticlesService()
@@ -56,13 +56,17 @@ class ArticlesManager {
             
             if status == .success, error == nil {
                 self.nopeArticles.forEach({ article in
-                    results.removeAll(where: { $0.source.id == article.source.id })
+                    results.removeAll(where: { $0.title == article.title })
+                })
+                
+                self.readLaterArticles.forEach({ article in
+                    results.removeAll(where: { $0.title == article.title })
                 })
                 
                 // Spotlight
                 var searchableItems = [CSSearchableItem]()
                 
-                articles.forEach({ article in
+                results.forEach({ article in
                     article.category = category
                     let searchItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
                     searchItemAttributeSet.title = article.title
@@ -78,28 +82,6 @@ class ArticlesManager {
             }
             
             completion(results)
-        }
-    }
-    
-    private func getArticlesFromCache() {
-        do {
-            if let nopeArticlesData = UserDefaults.standard.data(forKey: UserPrefs.nopeArticles),
-                let nopeArticles  = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(nopeArticlesData) as? [Article] {
-                self.nopeArticles = nopeArticles
-            }
-            
-            if let readLaterArticlesData = UserDefaults.standard.data(forKey: UserPrefs.readLaterArticles),
-                let readLaterArticles = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(readLaterArticlesData) as? [Article] {
-                self.readLaterArticles = readLaterArticles
-                
-                self.readLaterArticles.forEach({ article in
-                    if self.nopeArticles.contains(where: { $0.source.id == article.source.id }) {
-                        self.readLaterArticles.removeAll(where: { $0 == article })
-                    }
-                })
-            }
-        } catch {
-            print("Cannot unarchive readLaterArticles data")
         }
     }
     
@@ -119,29 +101,9 @@ class ArticlesManager {
     
     func addToNopeArticles(_ article: Article) {
         nopeArticles.append(article)
-        currentArticles.removeAll(where: { $0.source.id == article.source.id })
+        currentArticles.removeAll(where: { $0.title == article.title })
         
         saveNopeArticlesToCache()
-    }
-    
-    func saveReadLaterArticlesToCache() {
-        do {
-            let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: readLaterArticles, requiringSecureCoding: false)
-            UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.readLaterArticles)
-            UserDefaults.standard.synchronize()
-        } catch {
-            fatalError("Cannot archive readLaterArticles data")
-        }
-    }
-    
-    private func saveNopeArticlesToCache() {
-        do {
-            let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: nopeArticles, requiringSecureCoding: false)
-            UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.nopeArticles)
-            UserDefaults.standard.synchronize()
-        } catch {
-            fatalError("Cannot archive nopeArticles data")
-        }
     }
 }
 
@@ -179,5 +141,45 @@ extension ArticlesManager {
         }
         
         rxReadLaterArticles.onNext(readLaterArticles)
+    }
+}
+
+// MARK: - Cache
+
+extension ArticlesManager {
+    private func getArticlesFromCache() {
+        do {
+            if let nopeArticlesData = UserDefaults.standard.data(forKey: UserPrefs.nopeArticles),
+                let nopeArticles  = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(nopeArticlesData) as? [Article] {
+                self.nopeArticles = nopeArticles
+            }
+            
+            if let readLaterArticlesData = UserDefaults.standard.data(forKey: UserPrefs.readLaterArticles),
+                let readLaterArticles = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(readLaterArticlesData) as? [Article] {
+                self.readLaterArticles = readLaterArticles
+            }
+        } catch {
+            print("Cannot unarchive readLaterArticles data")
+        }
+    }
+    
+    func saveReadLaterArticlesToCache() {
+        do {
+            let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: readLaterArticles, requiringSecureCoding: false)
+            UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.readLaterArticles)
+            UserDefaults.standard.synchronize()
+        } catch {
+            fatalError("Cannot archive readLaterArticles data")
+        }
+    }
+    
+    private func saveNopeArticlesToCache() {
+        do {
+            let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: nopeArticles, requiringSecureCoding: false)
+            UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.nopeArticles)
+            UserDefaults.standard.synchronize()
+        } catch {
+            fatalError("Cannot archive nopeArticles data")
+        }
     }
 }

@@ -199,6 +199,7 @@ extension HomeViewController {
                 card.removeFromSuperview()
                 if let article = card.article {
                     ArticlesManager.shared.addToNopeArticles(article)
+                    self.articles.removeAll(where: { $0.title == article.title })
                     self.nextCard()
                 }
             }
@@ -216,6 +217,7 @@ extension HomeViewController {
                 card.removeFromSuperview()
                 if let article = card.article {
                     ArticlesManager.shared.addToReadLaterArticles(article)
+                    self.articles.removeAll(where: { $0.title == article.title })
                     self.nextCard()
                 }
             }
@@ -230,6 +232,10 @@ extension HomeViewController {
         }, completion: { _ in
             if let card = self.cardsMainView.subviews.last as? ArticleCardView {
                 card.removeFromSuperview()
+                if let article = card.article {
+                    self.articles.removeAll(where: { $0.title == article.title })
+                }
+                
                 self.nextCard()
                 
                 if let article = card.article, let articleReaderVC = R.storyboard.articles.articleReaderViewController() {
