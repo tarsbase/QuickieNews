@@ -63,7 +63,7 @@ class Article: NSObject, NSCoding {
         source = aDecoder.decodeObject(forKey: "source") as? Source ?? Source(id: nil, name: "")
         author = aDecoder.decodeObject(forKey: "author") as? String ?? ""
         title = aDecoder.decodeObject(forKey: "title") as? String ?? ""
-        descrip = aDecoder.decodeObject(forKey: "descrip") as? String ?? ""
+        descrip = aDecoder.decodeObject(forKey: "description") as? String ?? ""
         url = aDecoder.decodeObject(forKey: "url") as? String ?? ""
         urlToImage = aDecoder.decodeObject(forKey: "urlToImage") as? String ?? ""
         publishedAt = aDecoder.decodeObject(forKey: "publishedAt") as? Date ?? Date()
