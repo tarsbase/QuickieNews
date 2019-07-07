@@ -18,6 +18,7 @@ class ArticlesManager {
     private let articlesService: ArticlesService
     
     private var currentArticles: [Article]
+    private var readArticles: [Article]
     
     var readLaterArticles: [Article]
     let rxReadLaterArticles = BehaviorSubject<[Article]>(value: [])
@@ -31,6 +32,7 @@ class ArticlesManager {
         currentArticles = []
         readLaterArticles = []
         nopeArticles = []
+        readArticles = []
         getArticlesFromCache()
     }
     
@@ -60,6 +62,10 @@ class ArticlesManager {
                 })
                 
                 self.readLaterArticles.forEach({ article in
+                    results.removeAll(where: { $0.title == article.title })
+                })
+                
+                self.readArticles.forEach({ article in
                     results.removeAll(where: { $0.title == article.title })
                 })
                 
@@ -94,9 +100,11 @@ class ArticlesManager {
     
     func removeFromReadLaterArticles(_ article: Article) {
         readLaterArticles.removeAll(where: { $0.title == article.title })
+        readArticles.append(article)
         rxReadLaterArticles.onNext(readLaterArticles)
         
         saveReadLaterArticlesToCache()
+        saveReadArticlesToCache()
     }
     
     func addToNopeArticles(_ article: Article) {
@@ -158,8 +166,13 @@ extension ArticlesManager {
                 let readLaterArticles = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(readLaterArticlesData) as? [Article] {
                 self.readLaterArticles = readLaterArticles
             }
+            
+            if let readArticlesData = UserDefaults.standard.data(forKey: UserPrefs.readArticles),
+                let readArticles = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(readArticlesData) as? [Article] {
+                self.readArticles = readArticles
+            }
         } catch {
-            print("Cannot unarchive readLaterArticles data")
+            print("Cannot unarchive readLaterArticles, nopeArticles and readArticles data")
         }
     }
     
@@ -180,6 +193,16 @@ extension ArticlesManager {
             UserDefaults.standard.synchronize()
         } catch {
             fatalError("Cannot archive nopeArticles data")
+        }
+    }
+    
+    private func saveReadArticlesToCache() {
+        do {
+            let encodedArticles = try NSKeyedArchiver.archivedData(withRootObject: readArticles, requiringSecureCoding: false)
+            UserDefaults.standard.set(encodedArticles, forKey: UserPrefs.readArticles)
+            UserDefaults.standard.synchronize()
+        } catch {
+            fatalError("Cannot archive readArticles data")
         }
     }
 }

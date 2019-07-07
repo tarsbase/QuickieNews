@@ -11,6 +11,7 @@ import UIKit
 struct UserPrefs {
     static let readLaterArticles = "readLaterArticles"
     static let nopeArticles = "nopeArticles"
+    static let readArticles = "readArticles"
     static let categories = "categories"
 }
 
