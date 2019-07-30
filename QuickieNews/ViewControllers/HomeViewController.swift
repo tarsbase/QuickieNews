@@ -185,7 +185,7 @@ extension HomeViewController {
                     }
                 }
             @unknown default:
-                fatalError()
+                fatalError("Unknown state")
             }
         }
     }

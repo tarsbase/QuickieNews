@@ -117,7 +117,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `later`.
     static let later = Rswift.ImageResource(bundle: R.hostingBundle, name: "later")
@@ -127,6 +127,12 @@ struct R: Rswift.Validatable {
     static let now = Rswift.ImageResource(bundle: R.hostingBundle, name: "now")
     /// Image `placeholder`.
     static let placeholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeholder")
+    /// Image `sortCategory`.
+    static let sortCategory = Rswift.ImageResource(bundle: R.hostingBundle, name: "sortCategory")
+    /// Image `sortDecreasing`.
+    static let sortDecreasing = Rswift.ImageResource(bundle: R.hostingBundle, name: "sortDecreasing")
+    /// Image `sortIncreasing`.
+    static let sortIncreasing = Rswift.ImageResource(bundle: R.hostingBundle, name: "sortIncreasing")
     /// Image `tabbar_articles_inactive`.
     static let tabbar_articles_inactive = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabbar_articles_inactive")
     /// Image `tabbar_category_inactive`.
@@ -154,6 +160,21 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "placeholder", bundle: ..., traitCollection: ...)`
     static func placeholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.placeholder, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "sortCategory", bundle: ..., traitCollection: ...)`
+    static func sortCategory(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sortCategory, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "sortDecreasing", bundle: ..., traitCollection: ...)`
+    static func sortDecreasing(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sortDecreasing, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "sortIncreasing", bundle: ..., traitCollection: ...)`
+    static func sortIncreasing(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sortIncreasing, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "tabbar_articles_inactive", bundle: ..., traitCollection: ...)`

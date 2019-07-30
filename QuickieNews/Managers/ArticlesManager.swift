@@ -158,7 +158,7 @@ extension ArticlesManager {
     private func getArticlesFromCache() {
         do {
             if let nopeArticlesData = UserDefaults.standard.data(forKey: UserPrefs.nopeArticles),
-                let nopeArticles  = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(nopeArticlesData) as? [Article] {
+                let nopeArticles = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(nopeArticlesData) as? [Article] {
                 self.nopeArticles = nopeArticles
             }
             
