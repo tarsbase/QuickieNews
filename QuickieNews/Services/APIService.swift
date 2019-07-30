@@ -22,7 +22,7 @@ class APIService {
     private let newsAPIKey = "48df37d4832d44e9bf6a9eb967df4500"
     
     func urlForEndpoint(_ endpoint: String) -> String {
-        let urlString = newsAPIUrl + endpoint + "&\(newsAPIKey)"
+        let urlString = newsAPIUrl + endpoint + "?country=us&apiKey=\(newsAPIKey)"
         
         return urlString
     }
@@ -85,16 +85,6 @@ class APIService {
             
             if response.result.isFailure {
                 error = self.mapAPIError(response.data)
-                
-                // Display error banner
-//                if let apiError = error {
-//                    DispatchQueue.main.async {
-//                        let bannerAlert = BannerAlert(title: apiError.formattedMessage)
-//                        bannerAlert.style = .apiError
-//                        AudioServicesPlaySystemSound(1521)
-//                        BannerAlertManager.shared.queue(bannerAlert)
-//                    }
-//                }
             }
             
             completion(response.result.value, error)

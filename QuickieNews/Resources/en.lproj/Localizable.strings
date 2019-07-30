@@ -7,4 +7,25 @@
 */
 
 // MARK: ServerError
-"internal_error_no_code" = "Une erreur est survenue";
+"internal_error_no_code" = "An error occurs";
+
+// MARK: TabBarController
+"tabbar_home" = "Home";
+"tabbar_categories" = "My topics";
+"tabbar_articles" = "My articles";
+
+// MARK: HomeViewController
+"home_title" = "Article selection";
+"home_no_category" = "You didn't selected any topic";
+
+// MARK: CategoriesViewController
+"categories_title" = "Topic selection";
+
+// MARK: ReadLaterViewController
+"read_later_title" = "My articles to read";
+"read_later_sort_date_inc" = "Order by date ⬆️";
+"read_later_sort_date_dec" = "Order by date ⬇️";
+"read_later_sort_category" = "Order by category";
+
+// MARK: ArticleCardView
+"article_card_date" = "Published on the %@";
