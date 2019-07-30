@@ -73,12 +73,16 @@ class APIService {
         let cleanUrl = url.folding(options: .diacriticInsensitive, locale: .current)
         let headers = defaultHeaders
         
+        #if DEBUG
         showRequestLog(method, cleanUrl, parameters, headers)
+        #endif
         
         let request = Alamofire.request(cleanUrl, method: method, parameters: parameters, encoding: encoding, headers: headers).validate()
         
         request.responseJSON { (response) in
+            #if DEBUG
             self.showResponseLog(response)
+            #endif
             
             // Error management
             var error: APIError?
